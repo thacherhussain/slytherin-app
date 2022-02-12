@@ -1,4 +1,4 @@
-# Sandbox App
+# Slytherin App
 
 React Native Application
 
@@ -7,7 +7,7 @@ React Native Application
 - React Navigation v6
 - Native Base
 
-Add:
+### Next
 
 - Prisma backend (deploy to heroku)
 - use GraphQL/Apollo

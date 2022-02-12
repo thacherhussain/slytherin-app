@@ -10,6 +10,11 @@ export const Home = ({navigation}: HomeProps) => {
     <Page>
       <View>
         <Box flex={1} bg="#f2f2f2" alignItems="center" justifyContent="center">
+          <Box padding={5}>
+            <Text fontSize={'lg'} color={'brand.primary'}>
+              Home Screen
+            </Text>
+          </Box>
           <Image
             source={{
               uri: 'https://wallpaperaccess.com/full/317501.jpg',
@@ -18,19 +23,9 @@ export const Home = ({navigation}: HomeProps) => {
             size={250}
             width={'100%'}
           />
-          <Box
-            flex={1}
-            bg="#f2f2f2"
-            alignItems="center"
-            justifyContent="center"
-            paddingTop={5}>
-            <Button onPress={() => navigation.navigate('Data')}>To Data</Button>
-          </Box>
-          <Box paddingTop={5}>
-            <Text fontSize={'lg'} color={'brand.primary'}>
-              Home Screen
-            </Text>
-          </Box>
+        </Box>
+        <Box padding={5}>
+          <Button onPress={() => navigation.navigate('Data')}>To Data</Button>
         </Box>
       </View>
     </Page>
