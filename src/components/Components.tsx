@@ -26,7 +26,6 @@ type PageProps = {
 }
 
 export const Page: FC<PageProps> = props => {
-  // const {children, showButton, buttonText, onPress} = props
   const {children, button, title} = props
   const isDarkMode = useColorScheme() === 'dark'
 
