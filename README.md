@@ -34,3 +34,11 @@ Features:
 - Map of locations (google Maps API)
 
 - Find a few basic images -- banner image, crest logo, placeholder headshot image, icon image (for icon and splash screen)
+
+Tasks:
+[  ] Android Icon and Splash screen
+
+DOCS
+- Slytherin Images: https://wallpapers-clan.com/app-icons/harry-potter-slytherin/
+- Splash Screen: https://medium.com/@appstud/add-a-splash-screen-to-a-react-native-app-810492e773f9
+- Custom App Icon: https://medium.com/@ansonmathew/app-icon-in-react-native-ios-and-android-6165757e3fdb

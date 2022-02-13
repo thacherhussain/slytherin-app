@@ -1,10 +1,11 @@
-import React from 'react'
+import React, {useEffect} from 'react'
 import {NavigationContainer} from '@react-navigation/native'
 import {
   createNativeStackNavigator,
   NativeStackNavigationOptions,
 } from '@react-navigation/native-stack'
 import {NativeBaseProvider} from 'native-base'
+import SplashScreen from 'react-native-splash-screen'
 
 import {Home, Data, Another} from './src/screens/Screens'
 
@@ -18,6 +19,11 @@ const papayawhipHeader = {
 }
 
 const App = () => {
+  
+  useEffect(() => {
+    SplashScreen.hide()
+  }, [])
+
   return (
     <NativeBaseProvider theme={theme}>
       <NavigationContainer>
