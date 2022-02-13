@@ -2,6 +2,17 @@
 
 React Native Application
 
+
+
+### Getting Started
+`git clone REPO`
+`cd slytherin-app`
+`yarn`
+`cd ios`
+`pod install`
+
+run app: `react-native run-ios`
+
 #### Libraries
 
 - React Navigation v6

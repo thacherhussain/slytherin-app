@@ -1,9 +1,11 @@
 import React from 'react'
 import {View} from 'react-native'
 import {Text, Box, Button, Image} from 'native-base'
+import {SvgUri} from 'react-native-svg'
 
 import {HomeProps, DataProps, AnotherProps} from '../utils/types'
 import Page from '../components/Page'
+import SlytherinIcon from '../assets/SlytherinIcon.svg'
 
 export const Home = ({navigation}: HomeProps) => {
   return (
@@ -26,6 +28,10 @@ export const Home = ({navigation}: HomeProps) => {
         </Box>
         <Box padding={5}>
           <Button onPress={() => navigation.navigate('Data')}>To Data</Button>
+        </Box>
+        <Box padding={5}>
+          <Text>Hello</Text>
+          <SlytherinIcon height={250} width={250} />
         </Box>
       </View>
     </Page>
