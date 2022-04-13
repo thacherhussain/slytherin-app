@@ -2,16 +2,15 @@
 
 React Native Application
 
-
-
 ### Getting Started
+
 `git clone REPO`
 `cd slytherin-app`
 `yarn`
 `cd ios`
 `pod install`
 
-run app: `react-native run-ios`
+from the root directory run app: `npx react-native run-ios`
 
 #### Libraries
 
@@ -36,9 +35,10 @@ Features:
 - Find a few basic images -- banner image, crest logo, placeholder headshot image, icon image (for icon and splash screen)
 
 Tasks:
-[  ] Android Icon and Splash screen
+[ ] Android Icon and Splash screen
 
 DOCS
+
 - Slytherin Images: https://wallpapers-clan.com/app-icons/harry-potter-slytherin/
 - Splash Screen: https://medium.com/@appstud/add-a-splash-screen-to-a-react-native-app-810492e773f9
 - Custom App Icon: https://medium.com/@ansonmathew/app-icon-in-react-native-ios-and-android-6165757e3fdb
