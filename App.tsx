@@ -1,25 +1,17 @@
 import React, {useEffect} from 'react'
 import {NavigationContainer} from '@react-navigation/native'
-import {
-  createNativeStackNavigator,
-  NativeStackNavigationOptions,
-} from '@react-navigation/native-stack'
+import {createNativeStackNavigator} from '@react-navigation/native-stack'
 import {NativeBaseProvider} from 'native-base'
 import SplashScreen from 'react-native-splash-screen'
 
-import {Home, Data, Another} from './src/screens/Screens'
+import {Home, Characters, SingleCharacter} from './src/screens'
 
 import {theme} from './src/utils/theme'
 import {MainStackParamList} from './src/utils/types'
 
 const MainStack = createNativeStackNavigator<MainStackParamList>()
 
-const papayawhipHeader = {
-  headerStyle: {backgroundColor: '#f2f2f2'},
-}
-
 const App = () => {
-  
   useEffect(() => {
     SplashScreen.hide()
   }, [])
@@ -27,19 +19,13 @@ const App = () => {
   return (
     <NativeBaseProvider theme={theme}>
       <NavigationContainer>
-        <MainStack.Navigator
-          screenOptions={{
-            headerShown: false,
-          }}>
+        <MainStack.Navigator>
+          <MainStack.Screen name="Home" component={Home} />
+          <MainStack.Screen name="Characters" component={Characters} />
           <MainStack.Screen
-            name="Home"
-            component={Home}
-            options={{
-              ...(papayawhipHeader as NativeStackNavigationOptions),
-            }}
+            name="SingleCharacter"
+            component={SingleCharacter}
           />
-          <MainStack.Screen name="Data" component={Data} />
-          <MainStack.Screen name="Another" component={Another} />
         </MainStack.Navigator>
       </NavigationContainer>
     </NativeBaseProvider>
