@@ -12,7 +12,7 @@ import {
 } from 'native-base'
 
 import {CharactersProps} from '../utils/types'
-import {PageNoScroll, ButtonBase} from '../components'
+import {Page, ButtonBase} from '../components'
 
 export const Characters = ({navigation}: CharactersProps) => {
   const data = [
@@ -65,7 +65,7 @@ export const Characters = ({navigation}: CharactersProps) => {
   )
 
   return (
-    <PageNoScroll button={toSingleCharacter}>
+    <Page button={toSingleCharacter} noScroll>
       <Box>
         <Heading fontSize="xl" p="4" pb="3">
           Inbox
@@ -122,6 +122,6 @@ export const Characters = ({navigation}: CharactersProps) => {
           keyExtractor={item => item.id}
         />
       </Box>
-    </PageNoScroll>
+    </Page>
   )
 }

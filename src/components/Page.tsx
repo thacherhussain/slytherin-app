@@ -13,12 +13,13 @@ import {Colors} from 'react-native/Libraries/NewAppScreen'
 
 type PageProps = {
   children: ReactNode
-  title?: string
   button?: ReactNode
+  noScroll?: boolean
+  title?: string
 }
 
 export const Page: FC<PageProps> = props => {
-  const {children, button, title} = props
+  const {children, button, noScroll, title} = props
   const isDarkMode = useColorScheme() === 'dark'
 
   const backgroundStyle = {
@@ -36,9 +37,13 @@ export const Page: FC<PageProps> = props => {
             </Text>
           </Box>
         ) : undefined}
-        <ScrollView>
+        {noScroll ? (
           <Flex paddingY={10}>{children}</Flex>
-        </ScrollView>
+        ) : (
+          <ScrollView>
+            <Flex paddingY={10}>{children}</Flex>
+          </ScrollView>
+        )}
       </SafeAreaView>
       {button ? button : null}
     </View>
