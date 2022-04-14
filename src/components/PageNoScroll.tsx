@@ -1,0 +1,51 @@
+import React, {FC, ReactNode} from 'react'
+import {
+  SafeAreaView,
+  StatusBar,
+  useColorScheme,
+  View,
+  StyleSheet,
+} from 'react-native'
+import {Box, Text, Flex} from 'native-base'
+
+import {Colors} from 'react-native/Libraries/NewAppScreen'
+
+type PageNoScrollProps = {
+  children: ReactNode
+  title?: string
+  button?: ReactNode
+}
+
+export const PageNoScroll: FC<PageNoScrollProps> = props => {
+  const {children, button, title} = props
+  const isDarkMode = useColorScheme() === 'dark'
+
+  const backgroundStyle = {
+    backgroundColor: isDarkMode ? Colors.darker : Colors.lighter,
+  }
+
+  return (
+    <View style={styles.view}>
+      <SafeAreaView style={backgroundStyle}>
+        <StatusBar barStyle={isDarkMode ? 'light-content' : 'dark-content'} />
+        {title ? (
+          <Box paddingX={5} paddingY={10}>
+            <Text fontSize={'4xl'} color={'brand.primary'}>
+              {title}
+            </Text>
+          </Box>
+        ) : undefined}
+        <Flex paddingY={10}>{children}</Flex>
+      </SafeAreaView>
+      {button ? button : null}
+    </View>
+  )
+}
+
+const styles = StyleSheet.create({
+  view: {
+    flex: 1,
+    flexDirection: 'column',
+    justifyContent: 'space-between',
+  },
+})
