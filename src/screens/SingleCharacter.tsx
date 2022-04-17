@@ -4,8 +4,12 @@ import {Text, Box} from 'native-base'
 
 import {SingleCharacterProps} from '../utils/types'
 import {Page, ButtonBase} from '../components'
+import {useSelector} from 'react-redux'
 
-export const SingleCharacter = ({navigation}: SingleCharacterProps) => {
+export const SingleCharacter = ({navigation, route}: SingleCharacterProps) => {
+  const character = useSelector(
+    state => state.characters.characters[route.params.id],
+  )
   const toHomeButton = (
     <ButtonBase
       text={'Home'}
@@ -16,9 +20,9 @@ export const SingleCharacter = ({navigation}: SingleCharacterProps) => {
   return (
     <Page button={toHomeButton}>
       <View>
-        <Box flex={1} bg="#f2f2f2" alignItems="center" justifyContent="center">
+        <Box flex={1} bg="#f2f2f2" alignItems="center">
           <Text fontSize={'lg'} color={'brand.primary'}>
-            Content Here
+            {character.name}{' '}
           </Text>
         </Box>
       </View>

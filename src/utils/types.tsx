@@ -3,7 +3,9 @@ import type {NativeStackScreenProps} from '@react-navigation/native-stack'
 export type MainStackParamList = {
   Home: undefined
   Characters: undefined
-  SingleCharacter: undefined
+  SingleCharacter: {
+    id: number
+  }
 }
 
 export type HomeProps = NativeStackScreenProps<MainStackParamList, 'Home'>

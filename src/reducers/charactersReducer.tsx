@@ -1,12 +1,22 @@
 import * as actions from '../actions/charactersActions'
+import {Character} from '../models'
 
-export const initialState = {
+export type CharactersState = {
+  characters: Character[]
+  loading: boolean
+  hasErrors: boolean
+}
+
+export const initialState: CharactersState = {
   characters: [],
   loading: false,
   hasErrors: false,
 }
 
-export default function charactersReducer(state = initialState, action) {
+export default function charactersReducer(
+  state = initialState,
+  action,
+): CharactersState {
   switch (action.type) {
     case actions.GET_CHARACTERS:
       return {...state, loading: true}

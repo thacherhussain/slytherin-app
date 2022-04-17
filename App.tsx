@@ -11,10 +11,7 @@ import {MainStackParamList} from './src/utils/types'
 const MainStack = createNativeStackNavigator<MainStackParamList>()
 
 import {Provider} from 'react-redux'
-import {applyMiddleware, createStore} from 'redux'
-import thunk from 'redux-thunk'
-import rootReducer from './src/reducers/index'
-const store = createStore(rootReducer, applyMiddleware(thunk))
+import {store} from './src/store'
 
 const App = () => {
   useEffect(() => {

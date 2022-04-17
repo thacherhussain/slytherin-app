@@ -5,7 +5,6 @@ import {
   StatusBar,
   useColorScheme,
   View,
-  StyleSheet,
 } from 'react-native'
 import {Box, Text, Flex} from 'native-base'
 
@@ -27,7 +26,7 @@ export const Page: FC<PageProps> = props => {
   }
 
   return (
-    <View style={styles.view}>
+    <View>
       <SafeAreaView style={backgroundStyle}>
         <StatusBar barStyle={isDarkMode ? 'light-content' : 'dark-content'} />
         {title ? (
@@ -38,22 +37,14 @@ export const Page: FC<PageProps> = props => {
           </Box>
         ) : undefined}
         {noScroll ? (
-          <Flex paddingY={10}>{children}</Flex>
+          <Flex paddingY={2}>{children}</Flex>
         ) : (
           <ScrollView>
-            <Flex paddingY={10}>{children}</Flex>
+            <Flex paddingY={2}>{children}</Flex>
           </ScrollView>
         )}
+        {button ? <Box>{button}</Box> : null}
       </SafeAreaView>
-      {button ? button : null}
     </View>
   )
 }
-
-const styles = StyleSheet.create({
-  view: {
-    flex: 1,
-    flexDirection: 'column',
-    justifyContent: 'space-between',
-  },
-})

@@ -1,70 +1,139 @@
-import React from 'react'
-// import React, {useEffect} from 'react'
-// import {useSelector, useDispatch} from 'react-redux'
+import React, {useEffect, useState} from 'react'
+import {TouchableOpacity} from 'react-native'
+import {useSelector, useDispatch} from 'react-redux'
 
-// import {fetchCharacters} from '../actions/charactersActions'
+import {fetchCharacters} from '../actions/charactersActions'
 
-import {Text, Box, FlatList, VStack, HStack} from 'native-base'
+import {
+  Text,
+  Box,
+  FlatList,
+  VStack,
+  HStack,
+  ChevronRightIcon,
+  Button,
+} from 'native-base'
 
 import {CharactersProps} from '../utils/types'
-import {Page, ButtonBase} from '../components'
-import charactersData from '../charactersData.json'
+import {Page, ErrorText, LoadingSpinner} from '../components'
 
 export const Characters = ({navigation}: CharactersProps) => {
-  // const characters = useSelector(state => state.characters.characters)
-  // const loading = useSelector(state => state.characters.loading)
-  // const hasErrors = useSelector(state => state.characters.hasErrors)
-  // const dispatch = useDispatch()
+  const characters = useSelector(state => state.characters.characters)
+  const loading = useSelector(state => state.characters.loading)
+  const hasErrors = useSelector(state => state.characters.hasErrors)
+  const dispatch = useDispatch()
+  const [charactersToShow, setCharactersToShow] = useState(characters)
 
-  // useEffect(() => {
-  //   dispatch(fetchCharacters())
-  // }, [dispatch])
+  const slytherins = characters.filter(character => {
+    return character.house === 'Slytherin'
+  })
 
-  const toSingleCharacter = (
-    <ButtonBase
-      text={'Single Character'}
-      onButtonPress={() => navigation.navigate('SingleCharacter')}
-    />
-  )
+  const gryffindor = characters.filter(character => {
+    return character.house === 'Gryffindor'
+  })
+  const hufflepuff = characters.filter(character => {
+    return character.house === 'Hufflepuff'
+  })
+  const ravenclaw = characters.filter(character => {
+    return character.house === 'Ravenclaw'
+  })
+
+  const showHouseCharacters = (type: string) => {
+    switch (type) {
+      case 'Slytherin':
+        setCharactersToShow(slytherins)
+        break
+      case 'Gryffindor':
+        setCharactersToShow(gryffindor)
+        break
+      case 'Hufflepuff':
+        setCharactersToShow(hufflepuff)
+        break
+      case 'Ravenclaw':
+        setCharactersToShow(ravenclaw)
+        break
+      default:
+        setCharactersToShow(characters)
+    }
+  }
+
+  useEffect(() => {
+    dispatch(fetchCharacters())
+  }, [dispatch])
+
+  const getHouseButton = (house: string) => {
+    let color
+    switch (house) {
+      case 'Slytherin':
+        color = 'tertiary.900'
+        break
+      case 'Gryffindor':
+        color = 'danger.800'
+        break
+      case 'Hufflepuff':
+        color = 'yellow.500'
+        break
+      case 'Ravenclaw':
+        color = 'blue.800'
+        break
+      case 'All':
+        color = 'darkBlue.800'
+        break
+    }
+
+    return (
+      <Button
+        backgroundColor={color}
+        onPress={() => showHouseCharacters(house)}>
+        {house}
+      </Button>
+    )
+  }
 
   return (
-    <Page button={toSingleCharacter} noScroll>
+    <Page noScroll>
+      <HStack justifyContent={'space-between'} padding={'1'}>
+        {getHouseButton('Slytherin')}
+        {getHouseButton('Gryffindor')}
+        {getHouseButton('Ravenclaw')}
+        {getHouseButton('Hufflepuff')}
+      </HStack>
+      <Box padding={'1'}>{getHouseButton('All')}</Box>
       <Box>
-        <FlatList
-          data={charactersData}
-          renderItem={({item}) => (
-            <Box
-              borderBottomWidth="1"
-              _dark={{
-                borderColor: 'gray.600',
-              }}
-              borderColor="coolGray.200"
-              pl="4"
-              pr="5"
-              py="2">
-              <HStack space={3} justifyContent="space-between">
-                <VStack>
-                  <Text
-                    _dark={{
-                      color: 'warmGray.50',
-                    }}
-                    color="coolGray.800"
-                    bold>
-                    {item.name}
-                  </Text>
-                  <Text
-                    color="coolGray.600"
-                    _dark={{
-                      color: 'warmGray.200',
-                    }}>
-                    {item.house}
-                  </Text>
-                </VStack>
-              </HStack>
-            </Box>
-          )}
-          keyExtractor={item => item.id}
-        />
+        {hasErrors ? <ErrorText text={'Error Loading Characters'} /> : null}
+        {loading ? (
+          <Box padding={10}>
+            <LoadingSpinner text={'Loading'} />
+          </Box>
+        ) : (
+          <FlatList
+            data={charactersToShow}
+            renderItem={({item}) => (
+              <TouchableOpacity
+                onPress={() =>
+                  navigation.navigate('SingleCharacter', {id: item.id})
+                }>
+                <Box
+                  borderBottomWidth="1"
+                  borderColor="coolGray.200"
+                  pl="4"
+                  pr="5"
+                  py="2">
+                  <HStack space={3} justifyContent="space-between">
+                    <VStack>
+                      <Text color="coolGray.800" bold>
+                        {item.name}
+                      </Text>
+                      <Text color="coolGray.600">{item.house}</Text>
+                    </VStack>
+                    <ChevronRightIcon />
+                  </HStack>
+                </Box>
+              </TouchableOpacity>
+            )}
+            keyExtractor={item => item.id.toString()}
+          />
+        )}
       </Box>
     </Page>
   )
