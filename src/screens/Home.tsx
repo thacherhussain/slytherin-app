@@ -1,6 +1,6 @@
 import React from 'react'
 
-import {HomeProps} from '../utils/types'
+import {HomeProps} from '../navigation/types'
 import {Page, ButtonBase} from '../components'
 import {slytherinGreen} from '../utils/semanticColors'
 
@@ -17,10 +17,14 @@ export const Home = ({navigation}: HomeProps) => {
         backgroundColor={slytherinGreen}
       />
       <ButtonBase
+        text={'School Store'}
+        onButtonPress={() => navigation.navigate('SchoolStore')}
+      />
+      {/* <ButtonBase
         text={'Blank'}
         onButtonPress={() => navigation.navigate('Blank')}
         backgroundColor={slytherinGreen}
-      />
+      /> */}
     </Page>
   )
 }

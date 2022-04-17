@@ -2,7 +2,7 @@ import React, {useEffect, useState} from 'react'
 import {TouchableOpacity} from 'react-native'
 import {useSelector, useDispatch} from 'react-redux'
 
-import {fetchCharacters} from '../actions/charactersActions'
+import {fetchCharacters} from '../store/actions/charactersActions'
 
 import {
   Text,
@@ -14,7 +14,7 @@ import {
   Button,
 } from 'native-base'
 
-import {CharactersProps} from '../utils/types'
+import {CharactersProps} from '../navigation/types'
 import {Page, ErrorText, LoadingSpinner} from '../components'
 
 export const Characters = ({navigation}: CharactersProps) => {
@@ -60,6 +60,10 @@ export const Characters = ({navigation}: CharactersProps) => {
   useEffect(() => {
     dispatch(fetchCharacters())
   }, [dispatch])
+
+  useEffect(() => {
+    setCharactersToShow(characters)
+  }, [characters])
 
   const getHouseButton = (house: string) => {
     let color

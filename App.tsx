@@ -15,7 +15,7 @@ import {Provider} from 'react-redux'
 
 import {theme} from './src/utils/theme'
 import {store} from './src/store'
-import Navigation from './src/Navigation'
+import Navigation from './src/navigation/Navigation'
 
 const App = () => {
   useEffect(() => {

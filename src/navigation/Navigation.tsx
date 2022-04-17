@@ -7,10 +7,11 @@ import {
   Characters,
   SingleCharacter,
   EducationOverview,
+  SchoolStore,
   Blank,
-} from './screens'
+} from '../screens'
 
-import {MainStackParamList} from './utils/types'
+import {MainStackParamList} from './types'
 const MainStack = createNativeStackNavigator<MainStackParamList>()
 
 const Navigation = () => {
@@ -28,6 +29,7 @@ const Navigation = () => {
           component={EducationOverview}
         />
         <MainStack.Screen name="SingleCharacter" component={SingleCharacter} />
+        <MainStack.Screen name="SchoolStore" component={SchoolStore} />
         <MainStack.Screen name="Blank" component={Blank} />
       </MainStack.Navigator>
     </NavigationContainer>

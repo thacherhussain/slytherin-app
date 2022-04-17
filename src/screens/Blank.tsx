@@ -1,7 +1,7 @@
 import React from 'react'
 import {Box, Text} from 'native-base'
 
-import {HomeProps} from '../utils/types'
+import {HomeProps} from '../navigation/types'
 import {Page, ButtonBase} from '../components'
 import {slytherinGreen} from '../utils/semanticColors'
 

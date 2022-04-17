@@ -1,6 +1,6 @@
 import React from 'react'
 
-import {HomeProps} from '../../utils/types'
+import {HomeProps} from '../../navigation/types'
 import {Page, ButtonBase} from '../../components'
 import {slytherinGreen} from '../../utils/semanticColors'
 

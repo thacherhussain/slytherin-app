@@ -1,5 +1,5 @@
 import * as actions from '../actions/charactersActions'
-import {Character} from '../models'
+import {Character} from '../../models'
 
 export type CharactersState = {
   characters: Character[]

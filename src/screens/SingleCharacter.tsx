@@ -2,7 +2,7 @@ import React from 'react'
 import {View} from 'react-native'
 import {Text, Box} from 'native-base'
 
-import {SingleCharacterProps} from '../utils/types'
+import {SingleCharacterProps} from '../navigation/types'
 import {Page, ButtonBase} from '../components'
 import {useSelector} from 'react-redux'
 
