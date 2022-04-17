@@ -6,6 +6,7 @@ export type MainStackParamList = {
   SingleCharacter: {
     id: number
   }
+  EducationOverview: undefined
 }
 
 export type HomeProps = NativeStackScreenProps<MainStackParamList, 'Home'>
@@ -16,4 +17,9 @@ export type CharactersProps = NativeStackScreenProps<
 export type SingleCharacterProps = NativeStackScreenProps<
   MainStackParamList,
   'SingleCharacter'
+>
+
+export type EducationOverviewProps = NativeStackScreenProps<
+  MainStackParamList,
+  'EducationOverview'
 >

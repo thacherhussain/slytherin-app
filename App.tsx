@@ -4,7 +4,12 @@ import {createNativeStackNavigator} from '@react-navigation/native-stack'
 import {NativeBaseProvider} from 'native-base'
 import SplashScreen from 'react-native-splash-screen'
 
-import {Home, Characters, SingleCharacter} from './src/screens'
+import {
+  Home,
+  Characters,
+  SingleCharacter,
+  EducationOverview,
+} from './src/screens'
 
 import {theme} from './src/utils/theme'
 import {MainStackParamList} from './src/utils/types'
@@ -22,9 +27,17 @@ const App = () => {
     <Provider store={store}>
       <NativeBaseProvider theme={theme}>
         <NavigationContainer>
-          <MainStack.Navigator>
-            <MainStack.Screen name="Home" component={Home} />
+          <MainStack.Navigator screenOptions={{headerTransparent: true}}>
+            <MainStack.Screen
+              name="Home"
+              component={Home}
+              options={{headerTitle: 'Welcome'}}
+            />
             <MainStack.Screen name="Characters" component={Characters} />
+            <MainStack.Screen
+              name="EducationOverview"
+              component={EducationOverview}
+            />
             <MainStack.Screen
               name="SingleCharacter"
               component={SingleCharacter}

@@ -34,7 +34,11 @@ Features:
 
 - Find a few basic images -- banner image, crest logo, placeholder headshot image, icon image (for icon and splash screen)
 
-Tasks:
+Other:
+[ ] Custom Header with options -- ex. menu button on home and back buttons on others, etc.
+[ ] Update Theme with TypeScript
+
+Misc:
 [ ] Android Icon and Splash screen
 
 DOCS
