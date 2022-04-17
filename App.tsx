@@ -11,12 +11,11 @@ import {
   EducationOverview,
 } from './src/screens'
 
-import {theme} from './src/utils/theme'
-import {MainStackParamList} from './src/utils/types'
-const MainStack = createNativeStackNavigator<MainStackParamList>()
-
 import {Provider} from 'react-redux'
+
+import {theme} from './src/utils/theme'
 import {store} from './src/store'
+import Navigation from './src/Navigation'
 
 const App = () => {
   useEffect(() => {
@@ -26,24 +25,7 @@ const App = () => {
   return (
     <Provider store={store}>
       <NativeBaseProvider theme={theme}>
-        <NavigationContainer>
-          <MainStack.Navigator screenOptions={{headerTransparent: true}}>
-            <MainStack.Screen
-              name="Home"
-              component={Home}
-              options={{headerTitle: 'Welcome'}}
-            />
-            <MainStack.Screen name="Characters" component={Characters} />
-            <MainStack.Screen
-              name="EducationOverview"
-              component={EducationOverview}
-            />
-            <MainStack.Screen
-              name="SingleCharacter"
-              component={SingleCharacter}
-            />
-          </MainStack.Navigator>
-        </NavigationContainer>
+        <Navigation />
       </NativeBaseProvider>
     </Provider>
   )

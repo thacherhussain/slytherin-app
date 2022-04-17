@@ -16,6 +16,11 @@ export const Home = ({navigation}: HomeProps) => {
         onButtonPress={() => navigation.navigate('EducationOverview')}
         backgroundColor={slytherinGreen}
       />
+      <ButtonBase
+        text={'Blank'}
+        onButtonPress={() => navigation.navigate('Blank')}
+        backgroundColor={slytherinGreen}
+      />
     </Page>
   )
 }
