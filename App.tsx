@@ -1,17 +1,7 @@
 import React, {useEffect} from 'react'
-import {NavigationContainer} from '@react-navigation/native'
-import {createNativeStackNavigator} from '@react-navigation/native-stack'
 import {NativeBaseProvider} from 'native-base'
-import SplashScreen from 'react-native-splash-screen'
-
-import {
-  Home,
-  Characters,
-  SingleCharacter,
-  EducationOverview,
-} from './src/screens'
-
 import {Provider} from 'react-redux'
+import SplashScreen from 'react-native-splash-screen'
 
 import {theme} from './src/utils/theme'
 import {store} from './src/store'

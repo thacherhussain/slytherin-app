@@ -1,6 +1,6 @@
 export {Characters} from './Characters'
 export {Home} from './Home'
 export {SingleCharacter} from './SingleCharacter'
-export {EducationOverview} from './education/EducationOverview'
+export {History} from './history/History'
 export {SchoolStore} from './SchoolStore'
 export {Blank} from './Blank'

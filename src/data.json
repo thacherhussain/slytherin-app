@@ -1,27 +1,90 @@
 [
   {
-    "id": "bd7acbea-c1b1-46c2-aed5-3ad53abb28ba",
-    "name": "Aafreen Khan",
-    "house": "Good Day!"
+    "id": 0,
+    "name": "Harry Potter",
+    "house": "Gryffindor",
+    "patronus": "stag",
+    "hogwartsStudent": true,
+    "hogwartsStaff": false
   },
   {
-    "id": "3ac68afc-c605-48d3-a4f8-fbd91aa97f63",
-    "name": "Sujitha Mathur",
-    "house": "Cheer up, there!"
+    "id": 1,
+    "name": "Hermione Granger",
+    "house": "Gryffindor",
+    "patronus": "otter",
+    "hogwartsStudent": true,
+    "hogwartsStaff": false
   },
   {
-    "id": "58694a0f-3da1-471f-bd96-145571e29d72",
-    "name": "Anci Barroco",
-    "house": "Good Day!"
+    "id": 2,
+    "name": "Ron Weasley",
+    "house": "Gryffindor",
+    "patronus": "Jack Russell terrier",
+    "hogwartsStudent": true,
+    "hogwartsStaff": false
   },
   {
-    "id": "68694a0f-3da1-431f-bd56-142371e29d72",
-    "name": "Aniket Kumar",
-    "house": "All the best"
+    "id": 3,
+    "name": "Draco Malfoy",
+    "house": "Slytherin",
+    "patronus": "",
+    "hogwartsStudent": true,
+    "hogwartsStaff": false
   },
   {
-    "id": "28694a0f-3da1-471f-bd96-142456e29d72",
-    "name": "Kiara",
-    "house": "I will call today."
+    "id": 4,
+    "name": "Minerva McGonagall",
+    "house": "Gryffindor",
+    "patronus": "tabby cat",
+    "hogwartsStudent": false,
+    "hogwartsStaff": true
+  },
+  {
+    "id": 5,
+    "name": "Cedric Diggory",
+    "house": "Hufflepuff",
+    "patronus": "",
+    "hogwartsStudent": true,
+    "hogwartsStaff": false
+  },
+  {
+    "id": 6,
+    "name": "Cho Chang",
+    "house": "Ravenclaw",
+    "patronus": "swan",
+    "hogwartsStudent": true,
+    "hogwartsStaff": false
+  },
+  {
+    "id": 7,
+    "name": "Severus Snape",
+    "house": "Slytherin",
+    "patronus": "doe",
+    "hogwartsStudent": false,
+    "hogwartsStaff": true
+  },
+  {
+    "id": 8,
+    "name": "Rubeus Hagrid",
+    "house": "Gryffindor",
+    "patronus": "",
+    "hogwartsStudent": false,
+    "hogwartsStaff": true
+  },
+  {
+    "id": 9,
+    "name": "Neville Longbottom",
+    "house": "Gryffindor",
+    "patronus": "",
+    "hogwartsStudent": true,
+    "hogwartsStaff": false
+  },
+  {
+    "id": 10,
+    "name": "Luna Lovegood",
+    "house": "Ravenclaw",
+    "patronus": "hare",
+    "hogwartsStudent": true,
+    "hogwartsStaff": false
   }
 ]

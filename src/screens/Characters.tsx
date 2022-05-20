@@ -69,7 +69,7 @@ export const Characters = ({navigation}: CharactersProps) => {
     let color
     switch (house) {
       case 'Slytherin':
-        color = 'tertiary.900'
+        color = 'tertiary.800'
         break
       case 'Gryffindor':
         color = 'danger.800'
@@ -115,7 +115,10 @@ export const Characters = ({navigation}: CharactersProps) => {
             renderItem={({item}) => (
               <TouchableOpacity
                 onPress={() =>
-                  navigation.navigate('SingleCharacter', {id: item.id})
+                  navigation.navigate('SingleCharacter', {
+                    id: item.id,
+                    name: item.name,
+                  })
                 }>
                 <Box
                   borderBottomWidth="1"

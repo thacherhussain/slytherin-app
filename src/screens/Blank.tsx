@@ -3,7 +3,6 @@ import {Box, Text} from 'native-base'
 
 import {HomeProps} from '../navigation/types'
 import {Page, ButtonBase} from '../components'
-import {slytherinGreen} from '../utils/semanticColors'
 
 export const Blank = ({navigation}: HomeProps) => {
   return (
@@ -14,7 +13,6 @@ export const Blank = ({navigation}: HomeProps) => {
       <ButtonBase
         text={'Home'}
         onButtonPress={() => navigation.navigate('Home')}
-        backgroundColor={slytherinGreen}
       />
     </Page>
   )
