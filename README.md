@@ -38,3 +38,4 @@ from the root directory run app: `npx react-native run-ios`
 - Splash Screen: https://medium.com/@appstud/add-a-splash-screen-to-a-react-native-app-810492e773f9
 - Custom App Icon: https://medium.com/@ansonmathew/app-icon-in-react-native-ios-and-android-6165757e3fdb
 - Home screen header image: https://unsplash.com/photos/yzpaR5SvVCQ
+- Slytherin History Info: https://harrypotter.fandom.com/wiki/Slytherin
