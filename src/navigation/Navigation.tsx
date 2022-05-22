@@ -8,7 +8,11 @@ import {
   Home,
   Characters,
   SingleCharacter,
-  History,
+  SortingHat,
+  Emblem,
+  Traits,
+  Salazar,
+  BloodyBaron,
   SchoolStore,
   Blank,
 } from '../screens'
@@ -31,7 +35,31 @@ const Navigation = () => {
           options={{headerTitle: 'Welcome Slytherins'}}
         />
         <MainStack.Screen name="Characters" component={Characters} />
-        <MainStack.Screen name="History" component={History} />
+        <MainStack.Screen
+          name="Salazar"
+          component={Salazar}
+          options={{title: 'Slytherin History'}}
+        />
+        <MainStack.Screen
+          name="SortingHat"
+          component={SortingHat}
+          options={{title: 'Slytherin History'}}
+        />
+        <MainStack.Screen
+          name="Emblem"
+          component={Emblem}
+          options={{title: 'Slytherin History'}}
+        />
+        <MainStack.Screen
+          name="Traits"
+          component={Traits}
+          options={{title: 'Slytherin History'}}
+        />
+        <MainStack.Screen
+          name="BloodyBaron"
+          component={BloodyBaron}
+          options={{title: 'Slytherin History'}}
+        />
         <MainStack.Screen
           name="SingleCharacter"
           component={SingleCharacter}

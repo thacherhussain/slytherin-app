@@ -19,7 +19,7 @@ export const Home = ({navigation}: HomeProps) => {
       <Box>
         <ButtonBase
           text={'Slytherin History'}
-          onButtonPress={() => navigation.navigate('History')}
+          onButtonPress={() => navigation.navigate('SortingHat')}
         />
         <ButtonBase
           text={'School Store'}

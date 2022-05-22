@@ -7,7 +7,11 @@ export type MainStackParamList = {
     id: number
     name: string
   }
-  History: undefined
+  SortingHat: undefined
+  Emblem: undefined
+  Traits: undefined
+  Salazar: undefined
+  BloodyBaron: undefined
   SchoolStore: undefined
   Blank: undefined
 }
@@ -22,7 +26,17 @@ export type SingleCharacterProps = NativeStackScreenProps<
   'SingleCharacter'
 >
 
-export type HistoryProps = NativeStackScreenProps<MainStackParamList, 'History'>
+export type SortingHatProps = NativeStackScreenProps<
+  MainStackParamList,
+  'SortingHat'
+>
+export type EmblemProps = NativeStackScreenProps<MainStackParamList, 'Emblem'>
+export type TraitsProps = NativeStackScreenProps<MainStackParamList, 'Traits'>
+export type SalazarProps = NativeStackScreenProps<MainStackParamList, 'Salazar'>
+export type BloodyBaronProps = NativeStackScreenProps<
+  MainStackParamList,
+  'BloodyBaron'
+>
 
 export type SchoolStoreProps = NativeStackScreenProps<
   MainStackParamList,

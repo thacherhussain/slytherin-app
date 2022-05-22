@@ -25,6 +25,9 @@ from the root directory run app: `npx react-native run-ios`
 ## Next
 
 - Slytherin History (info/learning screens)
+  - Wipe white from backgrounds
+  - replace image for Traits
+  - resize Salazar and Bloody Baron images
 - School store (CRUD cart and Orders/Form) --> wrap auth around the store (possibly use Prisma backend -- deploy to heroku)
 - Knowledge Quiz (forms)
 - Map of locations (google Maps API)

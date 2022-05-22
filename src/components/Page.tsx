@@ -1,6 +1,6 @@
 import React, {FC, ReactNode} from 'react'
 import {SafeAreaView, ScrollView, StatusBar, useColorScheme} from 'react-native'
-import {Box, Text, Flex, useTheme} from 'native-base'
+import {Box, Text, Flex, useTheme, Center} from 'native-base'
 
 type PageProps = {
   children: ReactNode
@@ -23,11 +23,14 @@ export const Page: FC<PageProps> = props => {
     <SafeAreaView style={backgroundStyle}>
       <StatusBar barStyle={isDarkMode ? 'light-content' : 'dark-content'} />
       {title ? (
-        <Box paddingX={5} paddingY={10}>
-          <Text fontSize={'4xl'} color={colors.primary[800]}>
+        <Center>
+          <Text
+            fontSize={'2xl'}
+            color={colors.primary[700]}
+            fontWeight={'bold'}>
             {title}
           </Text>
-        </Box>
+        </Center>
       ) : undefined}
       {noScroll ? (
         <Flex paddingY={2}>{children}</Flex>
@@ -36,7 +39,7 @@ export const Page: FC<PageProps> = props => {
           <Flex paddingY={2}>{children}</Flex>
         </ScrollView>
       )}
-      {button ? <Box>{button}</Box> : null}
+      {button ? <Box marginY={5}>{button}</Box> : null}
     </SafeAreaView>
   )
 }

@@ -1,4 +1,5 @@
 export {Page} from './Page'
+export {HistoryPage} from './HistoryPage'
 export {ButtonBase} from './ButtonBase'
 export {ErrorText} from './ErrorText'
 export {LoadingSpinner} from './LoadingSpinner'
