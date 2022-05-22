@@ -29,6 +29,10 @@ export const Home = ({navigation}: HomeProps) => {
           text={'All Potterverse Characters'}
           onButtonPress={() => navigation.navigate('Characters')}
         />
+        <ButtonBase
+          text={'Snakelets'}
+          onButtonPress={() => navigation.navigate('Snakelets')}
+        />
         {/* <ButtonBase
         text={'Blank'}
         onButtonPress={() => navigation.navigate('Blank')}

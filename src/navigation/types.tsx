@@ -13,6 +13,7 @@ export type MainStackParamList = {
   Salazar: undefined
   BloodyBaron: undefined
   SchoolStore: undefined
+  Snakelets: undefined
   Blank: undefined
 }
 
@@ -36,6 +37,11 @@ export type SalazarProps = NativeStackScreenProps<MainStackParamList, 'Salazar'>
 export type BloodyBaronProps = NativeStackScreenProps<
   MainStackParamList,
   'BloodyBaron'
+>
+
+export type SnakeletsProps = NativeStackScreenProps<
+  MainStackParamList,
+  'Snakelets'
 >
 
 export type SchoolStoreProps = NativeStackScreenProps<
