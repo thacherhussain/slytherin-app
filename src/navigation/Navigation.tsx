@@ -29,50 +29,51 @@ const Navigation = () => {
         screenOptions={{
           headerTransparent: true,
           headerTintColor: colors.tertiary[900],
-        }}>
+        }}
+      >
         <MainStack.Screen
-          name="Home"
+          name='Home'
           component={Home}
           options={{headerTitle: 'Welcome Slytherins'}}
         />
-        <MainStack.Screen name="Characters" component={Characters} />
+        <MainStack.Screen name='Characters' component={Characters} />
         <MainStack.Screen
-          name="Salazar"
+          name='Salazar'
           component={Salazar}
           options={{title: 'Slytherin History'}}
         />
         <MainStack.Screen
-          name="SortingHat"
+          name='SortingHat'
           component={SortingHat}
           options={{title: 'Slytherin History'}}
         />
         <MainStack.Screen
-          name="Emblem"
+          name='Emblem'
           component={Emblem}
           options={{title: 'Slytherin History'}}
         />
         <MainStack.Screen
-          name="Traits"
+          name='Traits'
           component={Traits}
           options={{title: 'Slytherin History'}}
         />
         <MainStack.Screen
-          name="BloodyBaron"
+          name='BloodyBaron'
           component={BloodyBaron}
           options={{title: 'Slytherin History'}}
         />
         <MainStack.Screen
-          name="SingleCharacter"
+          name='SingleCharacter'
           component={SingleCharacter}
           options={({route}) => ({title: route.params.name})}
         />
         <MainStack.Screen
-          name="SchoolStore"
+          name='SchoolStore'
           component={SchoolStore}
           options={{title: 'School Store'}}
         />
-        <MainStack.Screen name="Snakelets" component={Snakelets} />
-        <MainStack.Screen name="Blank" component={Blank} />
+        <MainStack.Screen name='Snakelets' component={Snakelets} />
+        <MainStack.Screen name='Blank' component={Blank} />
       </MainStack.Navigator>
     </NavigationContainer>
   )

@@ -15,7 +15,8 @@ export const ButtonBase: FC<ButtonBaseProps> = props => {
     <Box paddingX={10} paddingBottom={15}>
       <Button
         backgroundColor={backgroundColor ?? colors.primary[800]}
-        onPress={() => onButtonPress()}>
+        onPress={() => onButtonPress()}
+      >
         {text}
       </Button>
     </Box>

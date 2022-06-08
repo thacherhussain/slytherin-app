@@ -88,7 +88,8 @@ export const Characters = ({navigation}: CharactersProps) => {
     return (
       <Button
         backgroundColor={color}
-        onPress={() => showHouseCharacters(house)}>
+        onPress={() => showHouseCharacters(house)}
+      >
         {house}
       </Button>
     )
@@ -119,19 +120,21 @@ export const Characters = ({navigation}: CharactersProps) => {
                     id: item.id,
                     name: item.name,
                   })
-                }>
+                }
+              >
                 <Box
-                  borderBottomWidth="1"
-                  borderColor="coolGray.200"
-                  pl="4"
-                  pr="5"
-                  py="2">
-                  <HStack space={3} justifyContent="space-between">
+                  borderBottomWidth='1'
+                  borderColor='coolGray.200'
+                  pl='4'
+                  pr='5'
+                  py='2'
+                >
+                  <HStack space={3} justifyContent='space-between'>
                     <VStack>
-                      <Text color="coolGray.800" bold>
+                      <Text color='coolGray.800' bold>
                         {item.name}
                       </Text>
-                      <Text color="coolGray.600">{item.house}</Text>
+                      <Text color='coolGray.600'>{item.house}</Text>
                     </VStack>
                     <ChevronRightIcon />
                   </HStack>

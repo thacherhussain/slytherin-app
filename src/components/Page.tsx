@@ -27,7 +27,8 @@ export const Page: FC<PageProps> = props => {
           <Text
             fontSize={'2xl'}
             color={colors.primary[700]}
-            fontWeight={'bold'}>
+            fontWeight={'bold'}
+          >
             {title}
           </Text>
         </Center>
