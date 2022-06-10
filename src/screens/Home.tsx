@@ -1,8 +1,8 @@
 import React from 'react'
 import {Box, Text, Image} from 'native-base'
 
-import {HomeProps} from '../navigation/types'
-import {Page, ButtonBase} from '../components'
+import {HomeProps} from '@navigation-types'
+import {Page, ButtonBase} from '@components'
 
 export const Home = ({navigation}: HomeProps) => {
   return (
