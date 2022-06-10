@@ -6,3 +6,4 @@ jest.config.json
 /ios
 metro.config.js
 .watchmanconfig
+.eslintrc.js
