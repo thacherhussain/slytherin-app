@@ -1,8 +1,8 @@
 import React from 'react'
 import {Box, Text} from 'native-base'
 
-import {SnakeletsProps} from '../../navigation/types'
-import {Page, ButtonBase} from '../../components'
+import {SnakeletsProps} from '@navigation-types'
+import {Page, ButtonBase} from '@components'
 
 export const Snakelets = ({navigation}: SnakeletsProps) => {
   return (

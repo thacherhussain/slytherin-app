@@ -14,8 +14,8 @@ import {
   Button,
 } from 'native-base'
 
-import {CharactersProps} from '../navigation/types'
-import {Page, ErrorText, LoadingSpinner} from '../components'
+import {CharactersProps} from '@navigation-types'
+import {Page, ErrorText, LoadingSpinner} from '@components'
 
 export const Characters = ({navigation}: CharactersProps) => {
   const characters = useSelector(state => state.characters.characters)

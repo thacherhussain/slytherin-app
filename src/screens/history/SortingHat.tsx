@@ -1,8 +1,8 @@
 import React from 'react'
 import {Text, Image} from 'native-base'
 
-import {ButtonBase, HistoryPage} from '../../components'
-import {SortingHatProps} from '../../navigation/types'
+import {ButtonBase, HistoryPage} from '@components'
+import {SortingHatProps} from '@navigation-types'
 
 export const SortingHat = ({navigation}: SortingHatProps) => {
   const nextButton = (

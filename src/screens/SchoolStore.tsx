@@ -1,7 +1,7 @@
 import React from 'react'
 
-import {HomeProps} from '../navigation/types'
-import {Page, ButtonBase} from '../components'
+import {HomeProps} from '@navigation-types'
+import {Page, ButtonBase} from '@components'
 
 export const SchoolStore = ({navigation}: HomeProps) => {
   return (

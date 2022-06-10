@@ -1,10 +1,10 @@
 import React from 'react'
 import {StyleSheet} from 'react-native'
+import {useSelector} from 'react-redux'
 import {Text, Box, Center, Image} from 'native-base'
 
-import {SingleCharacterProps} from '../navigation/types'
-import {Page} from '../components'
-import {useSelector} from 'react-redux'
+import {SingleCharacterProps} from '@navigation-types'
+import {Page} from '@components'
 
 export const SingleCharacter = ({route}: SingleCharacterProps) => {
   const character = useSelector(

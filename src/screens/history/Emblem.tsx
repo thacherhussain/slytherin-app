@@ -1,8 +1,8 @@
 import React from 'react'
 import {Text, Image} from 'native-base'
 
-import {ButtonBase, HistoryPage} from '../../components'
-import {EmblemProps} from '../../navigation/types'
+import {ButtonBase, HistoryPage} from '@components'
+import {EmblemProps} from '@navigation-types'
 
 export const Emblem = ({navigation}: EmblemProps) => {
   const nextButton = (
