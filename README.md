@@ -24,12 +24,19 @@ from the root directory run app: `npx react-native run-ios`
 
 ## Next
 
+- Knowledge Quiz (use react-hook-form)
+- Snaklets / Slytherin MASH
+
+### Clean Up
+
 - Slytherin History (info/learning screens)
-  - Wipe white from backgrounds
+  - Wipe white from image backgrounds
   - replace image for Traits
   - resize Salazar and Bloody Baron images
+
+### Other Feature Possibilities
+
 - School store (CRUD cart and Orders/Form) --> wrap auth around the store (possibly use Prisma backend -- deploy to heroku)
-- Knowledge Quiz (forms)
 - Map of locations (google Maps API)
 - Famous Alumni (flat list and profile pages)
 - Dark Mode/Light Mode
