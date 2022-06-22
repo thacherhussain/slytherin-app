@@ -21,7 +21,7 @@ export function fetchCharacters() {
 
     try {
       const response = await fetch(
-        'https://potterverse-v2.herokuapp.com/api/characters',
+        'https://potterverse-api.herokuapp.com/api/characters',
       )
       const data = await response.json()
       dispatch(getCharactersSuccess(data))
