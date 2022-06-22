@@ -15,6 +15,7 @@ import {
   BloodyBaron,
   SchoolStore,
   Snakelets,
+  Divination,
   Blank,
 } from '../screens'
 
@@ -73,6 +74,7 @@ const Navigation = () => {
           options={{title: 'School Store'}}
         />
         <MainStack.Screen name='Snakelets' component={Snakelets} />
+        <MainStack.Screen name='Divination' component={Divination} />
         <MainStack.Screen name='Blank' component={Blank} />
       </MainStack.Navigator>
     </NavigationContainer>

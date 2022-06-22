@@ -24,8 +24,9 @@ from the root directory run app: `npx react-native run-ios`
 
 ## Next
 
+- Dark Mode/Light Mode
 - Knowledge Quiz (use react-hook-form)
-- Snaklets / Slytherin MASH
+- Snaklets
 
 ### Clean Up
 
@@ -39,7 +40,6 @@ from the root directory run app: `npx react-native run-ios`
 - School store (CRUD cart and Orders/Form) --> wrap auth around the store (possibly use Prisma backend -- deploy to heroku)
 - Map of locations (google Maps API)
 - Famous Alumni (flat list and profile pages)
-- Dark Mode/Light Mode
 - Android Icon and Splash screen
 
 ### Resources

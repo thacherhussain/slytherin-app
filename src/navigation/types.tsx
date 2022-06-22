@@ -14,6 +14,7 @@ export type MainStackParamList = {
   BloodyBaron: undefined
   SchoolStore: undefined
   Snakelets: undefined
+  Divination: undefined
   Blank: undefined
 }
 

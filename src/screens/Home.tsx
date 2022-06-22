@@ -9,7 +9,7 @@ export const Home = ({navigation}: HomeProps) => {
     <Page themedBackground noScroll>
       <Image
         source={require('../assets/robe-header.jpg')}
-        alt={'Harry'}
+        alt={'Slytherin Robes'}
         size={200}
         width={'100%'}
       />
@@ -32,6 +32,10 @@ export const Home = ({navigation}: HomeProps) => {
         <ButtonBase
           text={'Snakelets'}
           onButtonPress={() => navigation.navigate('Snakelets')}
+        />
+        <ButtonBase
+          text={'Divination'}
+          onButtonPress={() => navigation.navigate('Divination')}
         />
         {/* <ButtonBase
         text={'Blank'}
