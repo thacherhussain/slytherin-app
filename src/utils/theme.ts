@@ -1,6 +1,9 @@
 import {extendTheme} from 'native-base'
 
 export const theme = extendTheme({
+  config: {
+    initialColorMode: 'dark',
+  },
   colors: {
     primary: {
       50: '#e5fcf2',
@@ -28,3 +31,5 @@ export const theme = extendTheme({
     },
   },
 })
+
+export type ITheme = typeof theme

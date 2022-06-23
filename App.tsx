@@ -3,9 +3,13 @@ import {NativeBaseProvider} from 'native-base'
 import {Provider} from 'react-redux'
 import SplashScreen from 'react-native-splash-screen'
 
-import {theme} from './src/utils/theme'
+import {theme, ITheme} from './src/utils/theme'
 import {store} from './src/store'
 import Navigation from './src/navigation/Navigation'
+
+declare module 'native-base' {
+  interface ICustomTheme extends ITheme {}
+}
 
 const App = () => {
   useEffect(() => {
