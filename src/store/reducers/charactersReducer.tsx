@@ -13,9 +13,14 @@ export const initialState: CharactersState = {
   hasErrors: false,
 }
 
+type Action =
+  | {type: typeof actions.GET_CHARACTERS}
+  | {type: typeof actions.GET_CHARACTERS_SUCCESS; payload: Character[]}
+  | {type: typeof actions.GET_CHARACTERS_FAILURE}
+
 export default function charactersReducer(
   state = initialState,
-  action,
+  action: Action,
 ): CharactersState {
   switch (action.type) {
     case actions.GET_CHARACTERS:
