@@ -93,4 +93,4 @@ export const getKids = (): string => {
   return statement
 }
 
-export const emmaFortune = `You will graduate from Hogwarts without having to take any exams or go to any classes you didn't want to go to. You will work as an independently wealthy woman who does what she wants in London and live at Malfoy Manor. You will marry Draco Malfoy and have 3 kids, all three in Slytherin. You will have a big dog named Fenris. Even though the dark lord has fallen you still feel your dark mark burn on a cold day.`
+export const emmaFortune = `You will graduate from Hogwarts without having to take any exams or go to any classes you didn't want to go to. You will work as an independently wealthy woman who does what she wants in London and live at 12 Grimmauld Place. You will marry Sirius Black and have 3 kids, all three in Slytherin. You will have two big dogs named Fenris and Draco. Even though the dark lord has fallen you still feel your dark mark burn on a cold day.`
