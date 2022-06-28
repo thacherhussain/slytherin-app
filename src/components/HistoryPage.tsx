@@ -8,14 +8,13 @@ type HistoryPageProps = {
   image?: ReactNode
   descriptionText: ReactElement
   button?: ReactNode
-  themedBackground?: boolean
 }
 
 export const HistoryPage: FC<HistoryPageProps> = props => {
-  const {title, image, descriptionText, button, themedBackground} = props
+  const {title, image, descriptionText, button} = props
 
   return (
-    <Page title={title} button={button} themedBackground={themedBackground}>
+    <Page title={title} button={button}>
       <Center margin={5}>{image}</Center>
       <Center margin={5}>{descriptionText}</Center>
     </Page>

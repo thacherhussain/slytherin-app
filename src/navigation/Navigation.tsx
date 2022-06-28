@@ -1,5 +1,10 @@
 import React from 'react'
-import {NavigationContainer} from '@react-navigation/native'
+import {useColorScheme} from 'react-native'
+import {
+  NavigationContainer,
+  DefaultTheme,
+  DarkTheme,
+} from '@react-navigation/native'
 import {createNativeStackNavigator} from '@react-navigation/native-stack'
 import {useTheme} from 'native-base'
 
@@ -21,11 +26,29 @@ import {
 
 const MainStack = createNativeStackNavigator<MainStackParamList>()
 
+const NavDarkTheme = {
+  ...DarkTheme,
+  colors: {
+    ...DarkTheme.colors,
+    background: 'rgb(31, 41, 55)',
+  },
+}
+
+const NavLightTheme = {
+  ...DefaultTheme,
+  colors: {
+    ...DefaultTheme.colors,
+  },
+}
+
 const Navigation = () => {
   const {colors} = useTheme()
+  const scheme = useColorScheme()
 
   return (
-    <NavigationContainer>
+    <NavigationContainer
+      theme={scheme === 'dark' ? NavDarkTheme : NavLightTheme}
+    >
       <MainStack.Navigator
         screenOptions={{
           headerTransparent: true,
