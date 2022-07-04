@@ -20,7 +20,7 @@ from the root directory run app: `npx react-native run-ios`
 
 - React Navigation v6
 - Native Base
-- Redux
+- Redux / Redux Tookit
 
 ## Next
 

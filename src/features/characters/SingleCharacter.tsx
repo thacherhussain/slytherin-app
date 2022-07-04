@@ -1,15 +1,18 @@
 import React from 'react'
 import {StyleSheet} from 'react-native'
-import {useSelector} from 'react-redux'
 import {Text, Box, Center, Image} from 'native-base'
 
 import {SingleCharacterProps} from '@navigation-types'
 import {Page} from '@components'
+import {useGetSingleCharacterQuery} from './charactersSlice'
+import {Character} from '../../types'
 
 export const SingleCharacter = ({route}: SingleCharacterProps) => {
-  const character = useSelector(
-    state => state.characters.characters[route.params.id],
-  )
+  const {data} = useGetSingleCharacterQuery(route.params.id)
+
+  // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+  // @ts-ignore
+  const character: Character = data ? data[0] : {}
 
   return (
     <Page>
@@ -33,7 +36,7 @@ export const SingleCharacter = ({route}: SingleCharacterProps) => {
         {character.ancestry ? (
           <Text fontSize={'lg'}>Ancestry: {character.ancestry}</Text>
         ) : null}
-        {character.wand.wood ? (
+        {character.wand ? (
           <Text fontSize={'lg'}>
             Wand: {character.wand.wood}, {character.wand.core},{' '}
             {character.wand.length} inches

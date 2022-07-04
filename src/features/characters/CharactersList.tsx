@@ -1,8 +1,5 @@
 import React, {useEffect, useState} from 'react'
 import {TouchableOpacity} from 'react-native'
-import {useSelector, useDispatch} from 'react-redux'
-
-import {fetchCharacters} from '../store/actions/charactersActions'
 
 import {
   Text,
@@ -15,28 +12,39 @@ import {
 } from 'native-base'
 
 import {CharactersProps} from '@navigation-types'
+import {useGetAllCharactersQuery} from './charactersSlice'
 import {Page, ErrorText, LoadingSpinner} from '@components'
 
 export const Characters = ({navigation}: CharactersProps) => {
-  const characters = useSelector(state => state.characters.characters)
-  const loading = useSelector(state => state.characters.loading)
-  const hasErrors = useSelector(state => state.characters.hasErrors)
-  const dispatch = useDispatch()
+  const {data, error, isLoading} = useGetAllCharactersQuery()
+
+  const characters = data
+  const loading = isLoading
+  const hasErrors = error
+
   const [charactersToShow, setCharactersToShow] = useState(characters)
 
-  const slytherins = characters.filter(character => {
-    return character.house === 'Slytherin'
-  })
+  const slytherins = characters
+    ? characters.filter(character => {
+        return character.house === 'Slytherin'
+      })
+    : []
 
-  const gryffindor = characters.filter(character => {
-    return character.house === 'Gryffindor'
-  })
-  const hufflepuff = characters.filter(character => {
-    return character.house === 'Hufflepuff'
-  })
-  const ravenclaw = characters.filter(character => {
-    return character.house === 'Ravenclaw'
-  })
+  const gryffindor = characters
+    ? characters.filter(character => {
+        return character.house === 'Gryffindor'
+      })
+    : []
+  const hufflepuff = characters
+    ? characters.filter(character => {
+        return character.house === 'Hufflepuff'
+      })
+    : []
+  const ravenclaw = characters
+    ? characters.filter(character => {
+        return character.house === 'Ravenclaw'
+      })
+    : []
 
   const showHouseCharacters = (type: string) => {
     switch (type) {
@@ -56,10 +64,6 @@ export const Characters = ({navigation}: CharactersProps) => {
         setCharactersToShow(characters)
     }
   }
-
-  useEffect(() => {
-    dispatch(fetchCharacters())
-  }, [dispatch])
 
   useEffect(() => {
     setCharactersToShow(characters)
