@@ -1,6 +1,7 @@
 import React from 'react'
 import {NavigationContainer} from '@react-navigation/native'
 import {createNativeStackNavigator} from '@react-navigation/native-stack'
+import {createDrawerNavigator} from '@react-navigation/drawer'
 import {useTheme} from 'native-base'
 
 import {MainStackParamList} from './types'
@@ -20,23 +21,32 @@ import {
 } from '../screens'
 
 const MainStack = createNativeStackNavigator<MainStackParamList>()
+const DrawerStack = createDrawerNavigator<MainStackParamList>()
 
 const Navigation = () => {
   const {colors} = useTheme()
-
+  const Drawer = () => {
+    return (
+      <DrawerStack.Navigator>
+        <DrawerStack.Screen name='Home' component={Home} />
+        <DrawerStack.Screen name='Characters' component={Characters} />
+      </DrawerStack.Navigator>
+    )
+  }
   return (
     <NavigationContainer>
       <MainStack.Navigator
         screenOptions={{
-          headerTransparent: true,
+          // headerTransparent: true,
           headerTintColor: colors.tertiary[900],
         }}
       >
-        <MainStack.Screen
+        <MainStack.Screen name='Home' component={Drawer} />
+        {/* <MainStack.Screen
           name='Home'
           component={Home}
           options={{headerTitle: 'Welcome Slytherins'}}
-        />
+        /> */}
         <MainStack.Screen name='Characters' component={Characters} />
         <MainStack.Screen
           name='Salazar'

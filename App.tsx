@@ -1,3 +1,4 @@
+import 'react-native-gesture-handler'
 import React, {useEffect} from 'react'
 import {NativeBaseProvider} from 'native-base'
 import {Provider} from 'react-redux'
