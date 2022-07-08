@@ -7,40 +7,42 @@ import {Page, ButtonBase} from '@components'
 export const Home = ({navigation}: HomeProps) => {
   return (
     <Page themedBackground noScroll>
-      <Image
-        source={require('../assets/robe-header.jpg')}
-        alt={'Slytherin Robes'}
-        size={200}
-        width={'100%'}
-      />
+      <Box paddingTop={10}>
+        <Image
+          source={require('../assets/robe-header.jpg')}
+          alt={'Slytherin Robes'}
+          size={200}
+          width={'100%'}
+        />
+      </Box>
       <Box alignItems={'center'} padding={5}>
         <Text fontSize={'md'}>Everything You Need to be a great Slytherin</Text>
       </Box>
       <Box>
         <ButtonBase
-          text={'Slytherin History'}
-          onButtonPress={() => navigation.navigate('SortingHat')}
-        />
-        <ButtonBase
-          text={'School Store'}
-          onButtonPress={() => navigation.navigate('SchoolStore')}
-        />
-        <ButtonBase
           text={'All Potterverse Characters'}
           onButtonPress={() => navigation.navigate('Characters')}
         />
         <ButtonBase
+          text={'Slytherin History'}
+          onButtonPress={() => navigation.navigate('SortingHat')}
+        />
+        {/* <ButtonBase
+          text={'School Store'}
+          onButtonPress={() => navigation.navigate('SchoolStore')}
+        /> */}
+        {/* <ButtonBase
           text={'Snakelets'}
           onButtonPress={() => navigation.navigate('Snakelets')}
-        />
+        /> */}
         <ButtonBase
           text={'Divination'}
           onButtonPress={() => navigation.navigate('Divination')}
         />
         {/* <ButtonBase
-        text={'Blank'}
-        onButtonPress={() => navigation.navigate('Blank')}
-      /> */}
+          text={'Blank'}
+          onButtonPress={() => navigation.navigate('Blank')}
+        /> */}
       </Box>
     </Page>
   )

@@ -1,5 +1,6 @@
 export {Blank} from './Blank'
 export {Home} from './Home'
+export {Profile} from './Profile'
 export {SchoolStore} from './SchoolStore'
 export * from '../features/characters/index'
 export {Divination} from '../features/divination/Divination'

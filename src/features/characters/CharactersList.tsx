@@ -10,8 +10,6 @@ import {
   ChevronRightIcon,
   Button,
   useTheme,
-  useToken,
-  useContrastText,
 } from 'native-base'
 
 import {CharactersProps} from '@navigation-types'
@@ -21,18 +19,16 @@ import {Character, HogwartsHouse} from 'src/types'
 
 const HouseButton = ({
   house,
-  onClick,
+  onPress,
 }: {
   house: HogwartsHouse | 'All'
-  onClick: () => void
+  onPress: () => void
 }) => {
   const theme = useTheme()
   const color = theme.colors[house]
-  const temp = useToken('colors', color)
-  const fontColor = useContrastText(temp)
 
   return (
-    <Button backgroundColor={temp} _text={{color: fontColor}} onPress={onClick}>
+    <Button backgroundColor={color} onPress={onPress}>
       {house}
     </Button>
   )
@@ -69,12 +65,12 @@ export const CharactersList = ({navigation}: CharactersProps) => {
           <HouseButton
             key={house}
             house={house}
-            onClick={() => setFilteredHouse(house)}
+            onPress={() => setFilteredHouse(house)}
           />
         ))}
       </HStack>
       <Box padding={'1'}>
-        <HouseButton house={'All'} onClick={() => setFilteredHouse(null)} />
+        <HouseButton house={'All'} onPress={() => setFilteredHouse(null)} />
       </Box>
       <Box>
         {hasErrors ? <ErrorText text={'Error Loading Characters'} /> : null}

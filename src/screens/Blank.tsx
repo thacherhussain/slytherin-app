@@ -7,7 +7,7 @@ import {Page, ButtonBase} from '@components'
 export const Blank = ({navigation}: HomeProps) => {
   return (
     <Page>
-      <Box alignItems={'center'} paddingBottom={5}>
+      <Box alignItems={'center'} paddingTop={10} paddingBottom={5}>
         <Text fontSize={'lg'}>Main Text Here</Text>
       </Box>
       <ButtonBase

@@ -4,7 +4,7 @@ import {createNativeStackNavigator} from '@react-navigation/native-stack'
 import {createDrawerNavigator} from '@react-navigation/drawer'
 import {useTheme} from 'native-base'
 
-import {MainStackParamList} from './types'
+import {MainStackParamList, DrawerStackParamList} from './types'
 import {
   Home,
   CharactersList,
@@ -17,36 +17,49 @@ import {
   SchoolStore,
   Snakelets,
   Divination,
+  Profile,
   Blank,
 } from '../screens'
 
 const MainStack = createNativeStackNavigator<MainStackParamList>()
-const DrawerStack = createDrawerNavigator<MainStackParamList>()
+const DrawerStack = createDrawerNavigator<DrawerStackParamList>()
 
 const Navigation = () => {
   const {colors} = useTheme()
+
   const Drawer = () => {
     return (
-      <DrawerStack.Navigator>
-        <DrawerStack.Screen name='Home' component={Home} />
-        <DrawerStack.Screen name='Characters' component={CharactersList} />
+      <DrawerStack.Navigator
+        screenOptions={{
+          headerTransparent: true,
+          headerTintColor: colors.tertiary[900],
+        }}
+      >
+        <DrawerStack.Screen
+          name='Home'
+          component={Home}
+          options={{headerTitle: 'Welcome Slytherins'}}
+        />
+        <DrawerStack.Screen name='Profile' component={Profile} />
       </DrawerStack.Navigator>
     )
   }
+
   return (
     <NavigationContainer>
       <MainStack.Navigator
         screenOptions={{
-          // headerTransparent: true,
+          headerTransparent: true,
           headerTintColor: colors.tertiary[900],
         }}
       >
-        <MainStack.Screen name='Home' component={Drawer} />
-        {/* <MainStack.Screen
+        <MainStack.Screen
           name='Home'
-          component={Home}
-          options={{headerTitle: 'Welcome Slytherins'}}
-        /> */}
+          component={Drawer}
+          options={{
+            headerShown: false,
+          }}
+        />
         <MainStack.Screen name='Characters' component={CharactersList} />
         <MainStack.Screen
           name='Salazar'
