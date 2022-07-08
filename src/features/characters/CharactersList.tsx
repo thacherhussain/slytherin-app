@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react'
+import React, {useState, useMemo} from 'react'
 import {TouchableOpacity} from 'react-native'
 
 import {
@@ -9,105 +9,73 @@ import {
   HStack,
   ChevronRightIcon,
   Button,
+  useTheme,
+  useToken,
+  useContrastText,
 } from 'native-base'
 
 import {CharactersProps} from '@navigation-types'
 import {useGetAllCharactersQuery} from './charactersSlice'
 import {Page, ErrorText, LoadingSpinner} from '@components'
+import {Character, HogwartsHouse} from 'src/types'
 
-export const Characters = ({navigation}: CharactersProps) => {
+const HouseButton = ({
+  house,
+  onClick,
+}: {
+  house: HogwartsHouse | 'All'
+  onClick: () => void
+}) => {
+  const theme = useTheme()
+  const color = theme.colors[house]
+  const temp = useToken('colors', color)
+  const fontColor = useContrastText(temp)
+
+  return (
+    <Button backgroundColor={temp} _text={{color: fontColor}} onPress={onClick}>
+      {house}
+    </Button>
+  )
+}
+export const CharactersList = ({navigation}: CharactersProps) => {
   const {data, error, isLoading} = useGetAllCharactersQuery()
 
-  const characters = data
+  const [filteredHouse, setFilteredHouse] = useState<HogwartsHouse | null>(null)
+
+  const characters: Character[] = data || []
   const loading = isLoading
   const hasErrors = error
 
-  const [charactersToShow, setCharactersToShow] = useState(characters)
+  const filteredCharacters = useMemo(() => {
+    if (!filteredHouse) return characters
 
-  const slytherins = characters
-    ? characters.filter(character => {
-        return character.house === 'Slytherin'
-      })
-    : []
+    const createFilterByHouse = (house: string) => (character: Character) =>
+      character.house === house
 
-  const gryffindor = characters
-    ? characters.filter(character => {
-        return character.house === 'Gryffindor'
-      })
-    : []
-  const hufflepuff = characters
-    ? characters.filter(character => {
-        return character.house === 'Hufflepuff'
-      })
-    : []
-  const ravenclaw = characters
-    ? characters.filter(character => {
-        return character.house === 'Ravenclaw'
-      })
-    : []
+    return characters.filter(createFilterByHouse(filteredHouse))
+  }, [filteredHouse, characters])
 
-  const showHouseCharacters = (type: string) => {
-    switch (type) {
-      case 'Slytherin':
-        setCharactersToShow(slytherins)
-        break
-      case 'Gryffindor':
-        setCharactersToShow(gryffindor)
-        break
-      case 'Hufflepuff':
-        setCharactersToShow(hufflepuff)
-        break
-      case 'Ravenclaw':
-        setCharactersToShow(ravenclaw)
-        break
-      default:
-        setCharactersToShow(characters)
-    }
-  }
-
-  useEffect(() => {
-    setCharactersToShow(characters)
-  }, [characters])
-
-  const getHouseButton = (house: string) => {
-    let color
-    switch (house) {
-      case 'Slytherin':
-        color = 'tertiary.800'
-        break
-      case 'Gryffindor':
-        color = 'danger.800'
-        break
-      case 'Hufflepuff':
-        color = 'yellow.500'
-        break
-      case 'Ravenclaw':
-        color = 'blue.800'
-        break
-      case 'All':
-        color = 'darkBlue.800'
-        break
-    }
-
-    return (
-      <Button
-        backgroundColor={color}
-        onPress={() => showHouseCharacters(house)}
-      >
-        {house}
-      </Button>
-    )
-  }
+  const houses: HogwartsHouse[] = [
+    'Slytherin',
+    'Gryffindor',
+    'Hufflepuff',
+    'Ravenclaw',
+  ]
 
   return (
     <Page noScroll>
       <HStack justifyContent={'space-between'} padding={'1'}>
-        {getHouseButton('Slytherin')}
-        {getHouseButton('Gryffindor')}
-        {getHouseButton('Ravenclaw')}
-        {getHouseButton('Hufflepuff')}
+        {houses.map(house => (
+          <HouseButton
+            key={house}
+            house={house}
+            onClick={() => setFilteredHouse(house)}
+          />
+        ))}
       </HStack>
-      <Box padding={'1'}>{getHouseButton('All')}</Box>
+      <Box padding={'1'}>
+        <HouseButton house={'All'} onClick={() => setFilteredHouse(null)} />
+      </Box>
       <Box>
         {hasErrors ? <ErrorText text={'Error Loading Characters'} /> : null}
         {loading ? (
@@ -116,7 +84,7 @@ export const Characters = ({navigation}: CharactersProps) => {
           </Box>
         ) : (
           <FlatList
-            data={charactersToShow}
+            data={filteredCharacters}
             renderItem={({item}) => (
               <TouchableOpacity
                 onPress={() =>
