@@ -5,14 +5,12 @@ import {Text, Box, Center, Image} from 'native-base'
 import {SingleCharacterProps} from '@navigation-types'
 import {Page} from '@components'
 import {useGetSingleCharacterQuery} from './charactersSlice'
-import {Character} from '../../types'
+import {blankCharacter} from '../../utils/blankCharacter'
 
 export const SingleCharacter = ({route}: SingleCharacterProps) => {
-  const {data} = useGetSingleCharacterQuery(route.params.id)
-
-  // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-  // @ts-ignore
-  const character: Character = data ? data[0] : {}
+  const {data: character = blankCharacter} = useGetSingleCharacterQuery(
+    route.params.id,
+  )
 
   return (
     <Page>

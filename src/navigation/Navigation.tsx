@@ -7,7 +7,7 @@ import {useTheme} from 'native-base'
 import {MainStackParamList} from './types'
 import {
   Home,
-  Characters,
+  CharactersList,
   SingleCharacter,
   SortingHat,
   Emblem,
@@ -29,7 +29,7 @@ const Navigation = () => {
     return (
       <DrawerStack.Navigator>
         <DrawerStack.Screen name='Home' component={Home} />
-        <DrawerStack.Screen name='Characters' component={Characters} />
+        <DrawerStack.Screen name='Characters' component={CharactersList} />
       </DrawerStack.Navigator>
     )
   }
@@ -47,7 +47,7 @@ const Navigation = () => {
           component={Home}
           options={{headerTitle: 'Welcome Slytherins'}}
         /> */}
-        <MainStack.Screen name='Characters' component={Characters} />
+        <MainStack.Screen name='Characters' component={CharactersList} />
         <MainStack.Screen
           name='Salazar'
           component={Salazar}

@@ -26,5 +26,16 @@ export const theme = extendTheme({
       800: '#00264d',
       900: '#000d1e',
     },
+    All: 'darkBlue.800',
+    Gryffindor: 'danger.800',
+    Hufflepuff: 'yellow.500',
+    Ravenclaw: 'blue.800',
+    Slytherin: 'tertiary.800',
   },
 })
+
+type CustomThemeType = typeof theme
+
+declare module 'native-base' {
+  interface ICustomTheme extends CustomThemeType {}
+}

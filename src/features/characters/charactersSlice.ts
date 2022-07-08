@@ -1,6 +1,6 @@
 import {createApi, fetchBaseQuery} from '@reduxjs/toolkit/query/react'
 
-import {Character} from '../../types'
+import {Character} from 'src/types'
 
 export const charactersApi = createApi({
   reducerPath: 'charactersApi',
@@ -13,6 +13,9 @@ export const charactersApi = createApi({
     }),
     getSingleCharacter: builder.query<Character, number>({
       query: id => `/characters/${id}`,
+      transformResponse: (res: Character[]) => {
+        return res[0]
+      },
     }),
   }),
 })
