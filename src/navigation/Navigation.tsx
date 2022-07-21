@@ -3,6 +3,7 @@ import {NavigationContainer} from '@react-navigation/native'
 import {createNativeStackNavigator} from '@react-navigation/native-stack'
 import {createDrawerNavigator} from '@react-navigation/drawer'
 import {useTheme} from 'native-base'
+import CustomDrawer from './CustomDrawer'
 
 import {MainStackParamList, DrawerStackParamList} from './types'
 import {
@@ -30,7 +31,10 @@ const Navigation = () => {
   const Drawer = () => {
     return (
       <DrawerStack.Navigator
+        drawerContent={props => <CustomDrawer {...props} />}
         screenOptions={{
+          drawerActiveTintColor: colors.tertiary[800],
+          drawerInactiveTintColor: colors.tertiary[700],
           headerTransparent: true,
           headerTintColor: colors.tertiary[900],
         }}
