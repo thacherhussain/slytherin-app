@@ -37,8 +37,7 @@ platform :ios do
       force_for_new_devices = options[:force_for_new_devices].nil? ? false : options[:force_for_new_devices]
   
       match(type: 'development', app_identifier: 'com.thacherhussain.slytherin', readonly: readonly, force_for_new_devices: force_for_new_devices)
-      # match(type: 'development', app_identifier: 'com.frandepascuali.time.beta', readonly: readonly, force_for_new_devices: force_for_new_devices)
-      # match(type: 'development', app_identifier: 'com.frandepascuali.time', readonly: readonly, force_for_new_devices: force_for_new_devices)
+      match(type: 'development', app_identifier: 'com.thacherhussain.slytherin.beta', readonly: readonly, force_for_new_devices: force_for_new_devices)
   end
   
   desc 'Fetch distribution certificates'
@@ -47,7 +46,6 @@ platform :ios do
       force_for_new_devices = options[:force_for_new_devices].nil? ? false : options[:force_for_new_devices]
 
       match(type: 'adhoc', app_identifier: 'com.thacherhussain.slytherin', readonly: readonly, force_for_new_devices: force_for_new_devices)
-      # match(type: 'adhoc', app_identifier: 'com.frandepascuali.time.beta', readonly: readonly, force_for_new_devices: force_for_new_devices)
-      # match(type: 'appstore', app_identifier: 'com.frandepascuali.time', readonly: readonly, force_for_new_devices: force_for_new_devices)
+      match(type: 'adhoc', app_identifier: 'com.thacherhussain.slytherin.beta', readonly: readonly, force_for_new_devices: force_for_new_devices)
   end
 end
