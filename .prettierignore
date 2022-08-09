@@ -7,3 +7,5 @@ jest.config.json
 metro.config.js
 .watchmanconfig
 .eslintrc.js
+/vendor
+/fastlane
