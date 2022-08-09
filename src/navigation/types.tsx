@@ -2,6 +2,7 @@ import type {NativeStackScreenProps} from '@react-navigation/native-stack'
 
 export type MainStackParamList = {
   Home: undefined
+  Landing: undefined
   Characters: undefined
   SingleCharacter: {
     id: number
@@ -24,10 +25,6 @@ export type DrawerStackParamList = {
 }
 
 export type HomeProps = NativeStackScreenProps<MainStackParamList, 'Home'>
-export type ProfileProps = NativeStackScreenProps<
-  DrawerStackParamList,
-  'Profile'
->
 
 export type CharactersProps = NativeStackScreenProps<
   MainStackParamList,

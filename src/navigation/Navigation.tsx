@@ -58,7 +58,7 @@ const Navigation = () => {
         }}
       >
         <MainStack.Screen
-          name='Home'
+          name='Landing'
           component={Drawer}
           options={{
             headerShown: false,
