@@ -1,11 +1,11 @@
 import React from 'react'
-import {NavigationContainer} from '@react-navigation/native'
-import {createNativeStackNavigator} from '@react-navigation/native-stack'
-import {createDrawerNavigator} from '@react-navigation/drawer'
-import {useTheme} from 'native-base'
+import { NavigationContainer } from '@react-navigation/native'
+import { createNativeStackNavigator } from '@react-navigation/native-stack'
+import { createDrawerNavigator } from '@react-navigation/drawer'
+import { useTheme } from 'native-base'
 import CustomDrawer from './CustomDrawer'
 
-import {MainStackParamList, DrawerStackParamList} from './types'
+import { MainStackParamList, DrawerStackParamList } from './types'
 import {
   Home,
   CharactersList,
@@ -26,7 +26,7 @@ const MainStack = createNativeStackNavigator<MainStackParamList>()
 const DrawerStack = createDrawerNavigator<DrawerStackParamList>()
 
 const Navigation = () => {
-  const {colors} = useTheme()
+  const { colors } = useTheme()
 
   const Drawer = () => {
     return (
@@ -42,7 +42,7 @@ const Navigation = () => {
         <DrawerStack.Screen
           name='Home'
           component={Home}
-          options={{headerTitle: 'Welcome Slytherins'}}
+          options={{ headerTitle: 'Welcome Slytherins' }}
         />
         <DrawerStack.Screen name='Profile' component={Profile} />
       </DrawerStack.Navigator>
@@ -68,37 +68,37 @@ const Navigation = () => {
         <MainStack.Screen
           name='Salazar'
           component={Salazar}
-          options={{title: 'Slytherin History'}}
+          options={{ title: 'Slytherin History' }}
         />
         <MainStack.Screen
           name='SortingHat'
           component={SortingHat}
-          options={{title: 'Slytherin History'}}
+          options={{ title: 'Slytherin History' }}
         />
         <MainStack.Screen
           name='Emblem'
           component={Emblem}
-          options={{title: 'Slytherin History'}}
+          options={{ title: 'Slytherin History' }}
         />
         <MainStack.Screen
           name='Traits'
           component={Traits}
-          options={{title: 'Slytherin History'}}
+          options={{ title: 'Slytherin History' }}
         />
         <MainStack.Screen
           name='BloodyBaron'
           component={BloodyBaron}
-          options={{title: 'Slytherin History'}}
+          options={{ title: 'Slytherin History' }}
         />
         <MainStack.Screen
           name='SingleCharacter'
           component={SingleCharacter}
-          options={({route}) => ({title: route.params.name})}
+          options={({ route }) => ({ title: route.params.name })}
         />
         <MainStack.Screen
           name='SchoolStore'
           component={SchoolStore}
-          options={{title: 'School Store'}}
+          options={{ title: 'School Store' }}
         />
         <MainStack.Screen name='Snakelets' component={Snakelets} />
         <MainStack.Screen name='Divination' component={Divination} />

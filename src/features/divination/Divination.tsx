@@ -1,7 +1,7 @@
-import React, {useState} from 'react'
-import {Box, Text, Button, useTheme, Image} from 'native-base'
+import React, { useState } from 'react'
+import { Box, Text, Button, useTheme, Image } from 'native-base'
 
-import {Page} from '@components'
+import { Page } from '@components'
 import {
   getOwl,
   getPartner,
@@ -15,7 +15,7 @@ import {
 } from './divinationutils'
 
 export const Divination = () => {
-  const {colors} = useTheme()
+  const { colors } = useTheme()
   const [busy, setBusy] = useState<boolean>(false)
   const [fortuneRead, setFortuneRead] = useState<boolean>(false)
   const [fortune, setFortune] = useState<string>('Fortune yet to be told')
@@ -27,7 +27,7 @@ export const Divination = () => {
   const getFortune = () => {
     setBusy(true)
     setFortune(
-      `You will get your ${getOwl()} OWL. You will work as ${getJob()} in ${getLocation()} and live ${getHousing()}. Your partner will be ${getPartner()} and together you will have a ${getPet()}. ${getKids()}. Even though the dark lord has fallen you still ${getPostDarkLordFeeling()}.`,
+      `You will get your ${getOwl()} OWL. You will work as ${getJob()} in ${getLocation()} and live ${getHousing()}. Your partner will be ${getPartner()} and together you will have a ${getPet()}. ${getKids()}. Even though the dark lord has fallen you still ${getPostDarkLordFeeling()}.`
     )
     setFortuneRead(true)
     setBusy(false)

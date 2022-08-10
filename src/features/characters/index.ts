@@ -1,2 +1,2 @@
-export {CharactersList} from './CharactersList'
-export {SingleCharacter} from './SingleCharacter'
+export { CharactersList } from './CharactersList'
+export { SingleCharacter } from './SingleCharacter'

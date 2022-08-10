@@ -1,15 +1,15 @@
 import React from 'react'
-import {StyleSheet} from 'react-native'
-import {Text, Box, Center, Image} from 'native-base'
+import { StyleSheet } from 'react-native'
+import { Text, Box, Center, Image } from 'native-base'
 
-import {SingleCharacterProps} from '@navigation-types'
-import {Page} from '@components'
-import {useGetSingleCharacterQuery} from './charactersSlice'
-import {blankCharacter} from '../../utils/blankCharacter'
+import { SingleCharacterProps } from '@navigation-types'
+import { Page } from '@components'
+import { useGetSingleCharacterQuery } from './charactersSlice'
+import { blankCharacter } from '../../utils/blankCharacter'
 
-export const SingleCharacter = ({route}: SingleCharacterProps) => {
-  const {data: character = blankCharacter} = useGetSingleCharacterQuery(
-    route.params.id,
+export const SingleCharacter = ({ route }: SingleCharacterProps) => {
+  const { data: character = blankCharacter } = useGetSingleCharacterQuery(
+    route.params.id
   )
 
   return (
@@ -17,7 +17,7 @@ export const SingleCharacter = ({route}: SingleCharacterProps) => {
       {character.image ? (
         <Center>
           <Image
-            source={{uri: character.image}}
+            source={{ uri: character.image }}
             alt={'Character Image'}
             style={styles.image}
           />

@@ -1,5 +1,5 @@
-import React, {useState, useMemo} from 'react'
-import {TouchableOpacity} from 'react-native'
+import React, { useState, useMemo } from 'react'
+import { TouchableOpacity } from 'react-native'
 
 import {
   Text,
@@ -12,10 +12,10 @@ import {
   useTheme,
 } from 'native-base'
 
-import {CharactersProps} from '@navigation-types'
-import {useGetAllCharactersQuery} from './charactersSlice'
-import {Page, ErrorText, LoadingSpinner} from '@components'
-import {Character, HogwartsHouse} from 'src/types'
+import { CharactersProps } from '@navigation-types'
+import { useGetAllCharactersQuery } from './charactersSlice'
+import { Page, ErrorText, LoadingSpinner } from '@components'
+import { Character, HogwartsHouse } from 'src/types'
 
 const HouseButton = ({
   house,
@@ -33,8 +33,8 @@ const HouseButton = ({
     </Button>
   )
 }
-export const CharactersList = ({navigation}: CharactersProps) => {
-  const {data, error, isLoading} = useGetAllCharactersQuery()
+export const CharactersList = ({ navigation }: CharactersProps) => {
+  const { data, error, isLoading } = useGetAllCharactersQuery()
 
   const [filteredHouse, setFilteredHouse] = useState<HogwartsHouse | null>(null)
 
@@ -81,7 +81,7 @@ export const CharactersList = ({navigation}: CharactersProps) => {
         ) : (
           <FlatList
             data={filteredCharacters}
-            renderItem={({item}) => (
+            renderItem={({ item }) => (
               <TouchableOpacity
                 onPress={() =>
                   navigation.navigate('SingleCharacter', {

@@ -1,6 +1,11 @@
-import React, {FC, ReactNode} from 'react'
-import {SafeAreaView, ScrollView, StatusBar, useColorScheme} from 'react-native'
-import {Box, Text, Flex, useTheme, Center} from 'native-base'
+import React, { FC, ReactNode } from 'react'
+import {
+  SafeAreaView,
+  ScrollView,
+  StatusBar,
+  useColorScheme,
+} from 'react-native'
+import { Box, Text, Flex, useTheme, Center } from 'native-base'
 
 type PageProps = {
   children: ReactNode
@@ -11,13 +16,14 @@ type PageProps = {
 }
 
 export const Page: FC<PageProps> = props => {
-  const {children, button, noScroll, title, themedBackground} = props
+  const { children, button, noScroll, title, themedBackground } = props
   const isDarkMode = useColorScheme() === 'dark'
-  const {colors} = useTheme()
+  const { colors } = useTheme()
 
-  const backgroundStyle = themedBackground
-    ? {height: '100%', backgroundColor: colors.tertiary[100]}
-    : {height: '100%', backgroundColor: colors.muted[50]}
+  const backgroundStyle = {
+    height: '100%',
+    backgroundColor: themedBackground ? colors.tertiary[100] : colors.muted[50],
+  }
 
   return (
     <SafeAreaView style={backgroundStyle}>

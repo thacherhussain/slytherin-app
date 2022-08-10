@@ -1,6 +1,6 @@
-import {createApi, fetchBaseQuery} from '@reduxjs/toolkit/query/react'
+import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react'
 
-import {Character} from 'src/types'
+import { Character } from 'src/types'
 
 export const charactersApi = createApi({
   reducerPath: 'charactersApi',
@@ -20,5 +20,5 @@ export const charactersApi = createApi({
   }),
 })
 
-export const {useGetAllCharactersQuery, useGetSingleCharacterQuery} =
+export const { useGetAllCharactersQuery, useGetSingleCharacterQuery } =
   charactersApi

@@ -1,10 +1,10 @@
 import React from 'react'
-import {Text, Image} from 'native-base'
+import { Text, Image } from 'native-base'
 
-import {ButtonBase, HistoryPage} from '@components'
-import {SalazarProps} from '@navigation-types'
+import { ButtonBase, HistoryPage } from '@components'
+import { SalazarProps } from '@navigation-types'
 
-export const Salazar = ({navigation}: SalazarProps) => {
+export const Salazar = ({ navigation }: SalazarProps) => {
   const nextButton = (
     <ButtonBase
       text={'Next'}

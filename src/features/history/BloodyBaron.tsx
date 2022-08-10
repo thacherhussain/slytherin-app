@@ -1,10 +1,10 @@
 import React from 'react'
-import {Text, Image} from 'native-base'
+import { Text, Image } from 'native-base'
 
-import {ButtonBase, HistoryPage} from '@components'
-import {BloodyBaronProps} from '@navigation-types'
+import { ButtonBase, HistoryPage } from '@components'
+import { BloodyBaronProps } from '@navigation-types'
 
-export const BloodyBaron = ({navigation}: BloodyBaronProps) => {
+export const BloodyBaron = ({ navigation }: BloodyBaronProps) => {
   const nextButton = (
     <ButtonBase
       text={'Home'}

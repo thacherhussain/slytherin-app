@@ -1,11 +1,11 @@
 import React from 'react'
-import {NativeModules} from 'react-native'
-import {Box, Text, Image} from 'native-base'
+import { NativeModules } from 'react-native'
+import { Box, Text, Image } from 'native-base'
 
-import {HomeProps} from '@navigation-types'
-import {Page, ButtonBase} from '@components'
+import { HomeProps } from '@navigation-types'
+import { Page, ButtonBase } from '@components'
 
-export const Home = ({navigation}: HomeProps) => {
+export const Home = ({ navigation }: HomeProps) => {
   const env = NativeModules.RNConfig.env
 
   console.log('Using env: ', env)

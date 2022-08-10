@@ -1,12 +1,12 @@
-import React, {FC} from 'react'
-import {Box, Text} from 'native-base'
+import React, { FC } from 'react'
+import { Box, Text } from 'native-base'
 
 type ErrorTextProps = {
   text: string
 }
 
 export const ErrorText: FC<ErrorTextProps> = props => {
-  const {text} = props
+  const { text } = props
 
   return (
     <Box alignItems={'center'}>

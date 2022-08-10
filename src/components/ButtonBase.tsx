@@ -1,5 +1,5 @@
-import React, {FC} from 'react'
-import {Button, Box, useTheme} from 'native-base'
+import React, { FC } from 'react'
+import { Button, Box, useTheme } from 'native-base'
 
 type ButtonBaseProps = {
   text: string
@@ -8,8 +8,8 @@ type ButtonBaseProps = {
 }
 
 export const ButtonBase: FC<ButtonBaseProps> = props => {
-  const {text, onButtonPress, backgroundColor} = props
-  const {colors} = useTheme()
+  const { text, onButtonPress, backgroundColor } = props
+  const { colors } = useTheme()
 
   return (
     <Box paddingX={10} paddingBottom={15}>

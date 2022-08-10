@@ -1,4 +1,4 @@
-import {Character} from 'src/types'
+import { Character } from 'src/types'
 
 export const blankCharacter: Character = {
   id: 9999,

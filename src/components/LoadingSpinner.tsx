@@ -1,12 +1,12 @@
-import React, {FC} from 'react'
-import {HStack, Spinner, Heading} from 'native-base'
+import React, { FC } from 'react'
+import { HStack, Spinner, Heading } from 'native-base'
 
 type LoadingSpinnerProps = {
   text: string
 }
 
 export const LoadingSpinner: FC<LoadingSpinnerProps> = props => {
-  const {text} = props
+  const { text } = props
 
   return (
     <HStack space={2} justifyContent='center'>

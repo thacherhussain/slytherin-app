@@ -1,7 +1,7 @@
-import React, {FC, ReactElement, ReactNode} from 'react'
-import {Center} from 'native-base'
+import React, { FC, ReactElement, ReactNode } from 'react'
+import { Center } from 'native-base'
 
-import {Page} from '@components'
+import { Page } from '@components'
 
 type HistoryPageProps = {
   title: string
@@ -12,7 +12,7 @@ type HistoryPageProps = {
 }
 
 export const HistoryPage: FC<HistoryPageProps> = props => {
-  const {title, image, descriptionText, button, themedBackground} = props
+  const { title, image, descriptionText, button, themedBackground } = props
 
   return (
     <Page title={title} button={button} themedBackground={themedBackground}>
