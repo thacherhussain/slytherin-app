@@ -12,13 +12,14 @@ type TextInputProps = UseControllerProps &
     name: string
     label: string
     defaultValue?: string
+    placeholder?: string
     setFormError?: any
   }
 
 export const TextInput: FC<TextInputProps> = props => {
   const formContext = useFormContext()
   const { formState } = formContext
-  const { name, label, defaultValue, rules, ...inputProps } = props
+  const { name, label, defaultValue, placeholder, rules, ...inputProps } = props
   const { field } = useController({ name, rules, defaultValue })
   const hasError = Boolean(formState?.errors[name])
 
@@ -37,6 +38,8 @@ export const TextInput: FC<TextInputProps> = props => {
       <Input
         size={'xl'}
         value={field.value}
+        defaultValue={defaultValue}
+        placeholder={placeholder}
         onBlur={field.onBlur}
         onChangeText={field.onChange}
         {...inputProps}

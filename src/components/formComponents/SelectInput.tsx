@@ -19,13 +19,22 @@ type SelectInputProps = UseControllerProps &
     label: string
     options: OptionsInput[]
     defaultValue?: string
+    placeholder?: string
     setFormError?: any
   }
 
 export const SelectInput: FC<SelectInputProps> = props => {
   const formContext = useFormContext()
   const { formState } = formContext
-  const { name, label, options, defaultValue, rules, ...inputProps } = props
+  const {
+    name,
+    label,
+    options,
+    defaultValue,
+    placeholder,
+    rules,
+    ...inputProps
+  } = props
   const { field } = useController({ name, rules, defaultValue })
   const hasError = Boolean(formState?.errors[name])
 
@@ -46,6 +55,7 @@ export const SelectInput: FC<SelectInputProps> = props => {
         selectedValue={field.value}
         onValueChange={field.onChange}
         defaultValue={defaultValue}
+        placeholder={placeholder}
         {...inputProps}
         _selectedItem={{
           endIcon: <CheckIcon size='5' />,

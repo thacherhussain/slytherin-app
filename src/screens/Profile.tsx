@@ -70,20 +70,12 @@ export const Profile = () => {
                 setFormError={setError}
                 rules={{ required: 'Name is required' }}
               />
-              <Box>
-                <SelectInput
-                  name={'house'}
-                  label={'House'}
-                  options={houseOptions}
-                />
-              </Box>
-              <Box>
-                <RadioInput
-                  name={'team'}
-                  label={'Team'}
-                  options={teamOptions}
-                />
-              </Box>
+              <SelectInput
+                name={'house'}
+                label={'House'}
+                options={houseOptions}
+              />
+              <RadioInput name={'team'} label={'Team'} options={teamOptions} />
             </VStack>
           </FormProvider>
           <Box paddingTop={6}>
