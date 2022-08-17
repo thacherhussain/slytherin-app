@@ -7,10 +7,7 @@ import {
   UseControllerProps,
 } from 'react-hook-form'
 
-type OptionsInput = {
-  label: string
-  value: string
-}
+import { OptionsInput } from './types'
 
 type RadioInputProps = UseControllerProps &
   IRadioGroupProps & {
