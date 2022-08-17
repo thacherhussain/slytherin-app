@@ -15,6 +15,36 @@ type FieldValues = {
   team: string
 }
 
+const houseOptions = [
+  {
+    label: 'Slytherin',
+    value: 'slytherin',
+  },
+  {
+    label: 'Gryfindor',
+    value: 'gryfindor',
+  },
+  {
+    label: 'Ravenclaw',
+    value: 'ravenclaw',
+  },
+  {
+    label: 'Hufflepuff',
+    value: 'hufflepuff',
+  },
+]
+
+const teamOptions = [
+  {
+    label: 'Order of the Phoenix',
+    value: 'phoenix',
+  },
+  {
+    label: 'Death Eaters',
+    value: 'death',
+  },
+]
+
 export const Profile = () => {
   const { colors } = useTheme()
 
@@ -44,19 +74,14 @@ export const Profile = () => {
                 <SelectInput
                   name={'house'}
                   label={'House'}
-                  options={[
-                    'Slytherin',
-                    'Gryfindor',
-                    'Ravenclaw',
-                    'Hufflepuff',
-                  ]}
+                  options={houseOptions}
                 />
               </Box>
               <Box>
                 <RadioInput
                   name={'team'}
                   label={'Team'}
-                  options={['Order of the Phoenix', 'Death Eaters']}
+                  options={teamOptions}
                 />
               </Box>
             </VStack>

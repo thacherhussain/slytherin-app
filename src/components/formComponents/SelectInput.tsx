@@ -8,11 +8,16 @@ import {
   UseControllerProps,
 } from 'react-hook-form'
 
+type OptionsInput = {
+  label: string
+  value: string
+}
+
 type SelectInputProps = UseControllerProps &
   ISelectProps & {
     name: string
     label: string
-    options: string[]
+    options: OptionsInput[]
     defaultValue?: string
     setFormError?: any
   }
@@ -46,8 +51,8 @@ export const SelectInput: FC<SelectInputProps> = props => {
           endIcon: <CheckIcon size='5' />,
         }}
       >
-        {options.map((value, i) => (
-          <Select.Item key={i} label={value} value={value} />
+        {options.map((option, i) => (
+          <Select.Item key={i} label={option.label} value={option.value} />
         ))}
       </Select>
 

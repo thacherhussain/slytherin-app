@@ -7,11 +7,16 @@ import {
   UseControllerProps,
 } from 'react-hook-form'
 
+type OptionsInput = {
+  label: string
+  value: string
+}
+
 type RadioInputProps = UseControllerProps &
   IRadioGroupProps & {
     name: string
     label: string
-    options: string[]
+    options: OptionsInput[]
     defaultValue?: string
     setFormError?: any
   }
@@ -42,10 +47,10 @@ export const RadioInput: FC<RadioInputProps> = props => {
         defaultValue={defaultValue}
         {...inputProps}
       >
-        {options.map((value, i) => (
-          <Radio key={i} value={value} size={'lg'}>
+        {options.map((option, i) => (
+          <Radio key={i} value={option.value} size={'lg'}>
             <Text fontSize={'lg'} ml={1} mr={3}>
-              {value}
+              {option.label}
             </Text>
           </Radio>
         ))}
