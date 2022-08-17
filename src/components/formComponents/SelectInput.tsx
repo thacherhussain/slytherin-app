@@ -55,7 +55,7 @@ export const SelectInput: FC<SelectInputProps> = props => {
         placeholder={placeholder}
         {...inputProps}
         _selectedItem={{
-          endIcon: <CheckIcon size='5' />,
+          endIcon: <CheckIcon size='5' color={'tertiary.900'} />,
         }}
       >
         {options.map((option, i) => (
