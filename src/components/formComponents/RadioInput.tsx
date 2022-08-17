@@ -1,25 +1,26 @@
 import React, { FC } from 'react'
 import { View } from 'react-native'
-import { Text, Input, IInputProps } from 'native-base'
+import { Text, Radio, IRadioGroupProps } from 'native-base'
 import {
   useController,
   useFormContext,
   UseControllerProps,
 } from 'react-hook-form'
 
-type TextInputProps = UseControllerProps &
-  IInputProps & {
+type RadioInputProps = UseControllerProps &
+  IRadioGroupProps & {
     name: string
     label: string
+    options: string[]
     defaultValue?: string
     setFormError?: any
   }
 
-export const TextInput: FC<TextInputProps> = props => {
+export const RadioInput: FC<RadioInputProps> = props => {
   const formContext = useFormContext()
   const { formState } = formContext
-  const { name, label, defaultValue, rules, ...inputProps } = props
-  const { field } = useController({ name, rules, defaultValue })
+  const { name, label, options, defaultValue, rules, ...inputProps } = props
+  const { field } = useController({ name, rules })
   const hasError = Boolean(formState?.errors[name])
 
   return (
@@ -34,13 +35,21 @@ export const TextInput: FC<TextInputProps> = props => {
           {label}
         </Text>
       )}
-      <Input
-        size={'xl'}
-        value={field.value}
-        onBlur={field.onBlur}
-        onChangeText={field.onChange}
+      <Radio.Group
+        name={name}
+        flexDirection={'column'}
+        onChange={field.onChange}
+        defaultValue={defaultValue}
         {...inputProps}
-      />
+      >
+        {options.map((value, i) => (
+          <Radio key={i} value={value} size={'lg'}>
+            <Text fontSize={'lg'} ml={1} mr={3}>
+              {value}
+            </Text>
+          </Radio>
+        ))}
+      </Radio.Group>
 
       {/*// @ts-ignore */}
       {hasError && <Text>{formState.errors[name].message}</Text>}

@@ -6,7 +6,6 @@ import {
 } from '@react-navigation/drawer'
 import { useTheme } from 'native-base'
 
-// eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-ignore
 const CustomDrawer = props => {
   const { colors } = useTheme()

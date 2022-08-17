@@ -1,24 +1,26 @@
 import React, { FC } from 'react'
 import { View } from 'react-native'
-import { Text, Input, IInputProps } from 'native-base'
+import { Text, Select, ISelectProps, CheckIcon } from 'native-base'
+
 import {
   useController,
   useFormContext,
   UseControllerProps,
 } from 'react-hook-form'
 
-type TextInputProps = UseControllerProps &
-  IInputProps & {
+type SelectInputProps = UseControllerProps &
+  ISelectProps & {
     name: string
     label: string
+    options: string[]
     defaultValue?: string
     setFormError?: any
   }
 
-export const TextInput: FC<TextInputProps> = props => {
+export const SelectInput: FC<SelectInputProps> = props => {
   const formContext = useFormContext()
   const { formState } = formContext
-  const { name, label, defaultValue, rules, ...inputProps } = props
+  const { name, label, options, defaultValue, rules, ...inputProps } = props
   const { field } = useController({ name, rules, defaultValue })
   const hasError = Boolean(formState?.errors[name])
 
@@ -34,13 +36,20 @@ export const TextInput: FC<TextInputProps> = props => {
           {label}
         </Text>
       )}
-      <Input
+      <Select
         size={'xl'}
-        value={field.value}
-        onBlur={field.onBlur}
-        onChangeText={field.onChange}
+        selectedValue={field.value}
+        onValueChange={field.onChange}
+        defaultValue={defaultValue}
         {...inputProps}
-      />
+        _selectedItem={{
+          endIcon: <CheckIcon size='5' />,
+        }}
+      >
+        {options.map((value, i) => (
+          <Select.Item key={i} label={value} value={value} />
+        ))}
+      </Select>
 
       {/*// @ts-ignore */}
       {hasError && <Text>{formState.errors[name].message}</Text>}
